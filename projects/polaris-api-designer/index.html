@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing an API Creator for Developers with 84.51° — Yale Miller</title>
+<meta name="description" content="UX and research for Polaris, an API design tool for developers and non-developers at 84.51°.">
+<meta property="og:title" content="Designing an API Creator for Developers with 84.51° — Yale Miller">
+<meta property="og:description" content="UX and research for Polaris, an API design tool for developers and non-developers at 84.51°.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#6a3ff0">
+<link rel="icon" href="../../assets/logo/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="cs-hero" style="--project-color:#6a3ff0;--project-color-88:rgba(106, 63, 240, 0.88);--project-color-55:rgba(106, 63, 240, 0.55)">
+  <picture><source type="image/webp" srcset="../../assets/img/polaris-hero-800.webp 800w, ../../assets/img/polaris-hero-1000.webp 1000w" sizes="100vw"><img src="../../assets/img/polaris-hero-1000.jpg" srcset="../../assets/img/polaris-hero-800.jpg 800w, ../../assets/img/polaris-hero-1000.jpg 1000w" sizes="100vw" width="1000" height="894" alt="" class="cs-hero__bg" fetchpriority="high"></picture>
+  <div class="cs-hero__ov1"></div><div class="cs-hero__ov2"></div>
+  <header class="site-header on-hero">
+  <a class="brand" href="../../" aria-label="Yale Miller — home"><img class="brand__logo" src="../../assets/logo/logo.svg" alt="" width="93" height="49">YALE MILLER</a>
+  <nav class="nav" aria-label="Primary"><a href="../../#projects">PROJECTS</a><a href="https://drive.google.com/file/d/1q6sAfwxFcwk1NBoerzAJZkJnyHLh6ytB/view?usp=sharing" target="_blank" rel="noopener">RESUME</a><a href="https://www.linkedin.com/in/yale-miller/" target="_blank" rel="noopener">LINKEDIN</a><a href="../../ephemera/">EPHEMERA</a></nav>
+  <button type="button" class="menu-btn" data-menu-open aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+</header>
+  <div class="cs-hero__body">
+    <h1 class="cs-hero__h1">How do we help developers build better APIs faster?</h1>
+    <span class="cs-hero__count" aria-label="Project 03 of 09">03 / 09</span>
+  </div>
+</div>
+<main id="main">
+  <section class="cs-intro">
+    <h2 class="cs-intro__title">Polaris API Designer</h2>
+    <div class="cs-intro__text">
+      <p class="label">Overview</p>
+      <div class="prose"><p>As a data analytics company, 84.51° profits off the development of APIs. However there's a problem. API developers at the company each have their own process to build an API, which results in a lack of standards, which in turn results in a subpar product. Polaris is an API creator tool designed to make it easier for developers and non-developers alike to build APIs. The Polaris API Designer is just one part of the tool that lets developers mock up and share API designs before they have to write a single line of code.</p></div>
+    </div>
+    <dl class="cs-meta">
+      <div><dt>Type</dt><dd>UX/UI Design</dd></div>
+      <div><dt>Date</dt><dd>Fall 2024</dd></div>
+      <div><dt>Team Credit</dt><dd>Joshua Smith</dd></div>
+      <div><dt>Role</dt><dd>UX designer &amp; researcher</dd></div>
+    </dl>
+  </section>
+
+  <section class="section">
+    <p class="pull">Going from "I'm in Hell" to "That would be dope as Hell."<small>Real quotes from user research</small></p>
+  </section>
+
+  <section class="section">
+    <div class="row">
+      <h2 class="h2">So what even is an API…?</h2>
+      <div class="prose">
+        <p>An API is an Application Programming Interface. Does that clear things up? Probably not — it took me a while to get a handle on what APIs are and how they drive revenue.</p>
+        <p>To help understand what an API is in the context of this project, I've developed the soda fountain metaphor. 84.51° employees are masters of working with data, just as Coca-Cola employees are masters of making soda. The customer, however, doesn't care about what's going on behind the scenes. They just want to get their nice filtered Kroger shopping data, or cup of Diet Coke, when they ask for it.</p>
+        <p>That's when the API comes in. It's a contract of code between us and the customer. You pay and put your cup under Minute Maid and you'll get lemonade. You send us this message and you'll get this array of data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="h2">The Problem: At 84.51° API development is…</h2>
+    <div class="stats">
+      <div class="stat stat--wordy"><p class="stat__n">Fractured</p><p class="stat__t">Each developer has their own process and standard of API development, which makes collaboration difficult.</p></div>
+      <div class="stat stat--wordy"><p class="stat__n">Slow</p><p class="stat__t">The time to build APIs for customers is much slower than the competition, which is leaving revenue on the table.</p></div>
+      <div class="stat stat--wordy"><p class="stat__n">Repetitive</p><p class="stat__t">Each time a new API is built it requires timely, boilerplate steps — such as creating a GitHub repo — that could be easily automated.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="row row--end mb">
+      <div>
+        <p class="label">Initial research question</p>
+        <h2 class="h2" style="margin-bottom:0">What steps do 84.51° developers take to build an API?</h2>
+      </div>
+      <div class="prose"><p>Before designing anything, I mapped how developers actually build an API today — every step, hand-off and workaround — then synthesized the interviews into themes.</p></div>
+    </div>
+    <figure><button type="button" class="zoom" data-zoom data-full="../../assets/img/polaris-workflow-1600.jpg" data-caption="The current-state API development workflow." aria-label="Open: The current-state API development workflow."><picture><source type="image/webp" srcset="../../assets/img/polaris-workflow-800.webp 800w, ../../assets/img/polaris-workflow-1200.webp 1200w, ../../assets/img/polaris-workflow-1600.webp 1600w" sizes="(max-width: 639px) 100vw, calc(100vw - 96px)"><img src="../../assets/img/polaris-workflow-1600.jpg" srcset="../../assets/img/polaris-workflow-800.jpg 800w, ../../assets/img/polaris-workflow-1200.jpg 1200w, ../../assets/img/polaris-workflow-1600.jpg 1600w" sizes="(max-width: 639px) 100vw, calc(100vw - 96px)" width="2108" height="964" alt="Workflow map of the steps developers take to build an API at 84.51°" loading="lazy" decoding="async"></picture></button><figcaption>The current-state API development workflow.</figcaption></figure>
+    <div style="height:12px"></div>
+    <div class="gallery gallery--five r-11">
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-1-960.jpg" data-caption="Research synthesis sticky note 1" aria-label="Open: Research synthesis sticky note 1"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-1-800.webp 800w, ../../assets/img/polaris-sticky-1-960.webp 960w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-1-960.jpg" srcset="../../assets/img/polaris-sticky-1-800.jpg 800w, ../../assets/img/polaris-sticky-1-960.jpg 960w" sizes="(max-width: 639px) 48vw, 18vw" width="960" height="966" alt="Research synthesis sticky note 1" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-2-1080.jpg" data-caption="Research synthesis sticky note 2" aria-label="Open: Research synthesis sticky note 2"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-2-800.webp 800w, ../../assets/img/polaris-sticky-2-1080.webp 1080w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-2-1080.jpg" srcset="../../assets/img/polaris-sticky-2-800.jpg 800w, ../../assets/img/polaris-sticky-2-1080.jpg 1080w" sizes="(max-width: 639px) 48vw, 18vw" width="1080" height="1084" alt="Research synthesis sticky note 2" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-3-1086.jpg" data-caption="Research synthesis sticky note 3" aria-label="Open: Research synthesis sticky note 3"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-3-800.webp 800w, ../../assets/img/polaris-sticky-3-1086.webp 1086w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-3-1086.jpg" srcset="../../assets/img/polaris-sticky-3-800.jpg 800w, ../../assets/img/polaris-sticky-3-1086.jpg 1086w" sizes="(max-width: 639px) 48vw, 18vw" width="1086" height="1092" alt="Research synthesis sticky note 3" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-4-1086.jpg" data-caption="Research synthesis sticky note 4" aria-label="Open: Research synthesis sticky note 4"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-4-800.webp 800w, ../../assets/img/polaris-sticky-4-1086.webp 1086w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-4-1086.jpg" srcset="../../assets/img/polaris-sticky-4-800.jpg 800w, ../../assets/img/polaris-sticky-4-1086.jpg 1086w" sizes="(max-width: 639px) 48vw, 18vw" width="1086" height="1086" alt="Research synthesis sticky note 4" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-5-1126.jpg" data-caption="Research synthesis sticky note 5" aria-label="Open: Research synthesis sticky note 5"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-5-800.webp 800w, ../../assets/img/polaris-sticky-5-1126.webp 1126w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-5-1126.jpg" srcset="../../assets/img/polaris-sticky-5-800.jpg 800w, ../../assets/img/polaris-sticky-5-1126.jpg 1126w" sizes="(max-width: 639px) 48vw, 18vw" width="1126" height="1126" alt="Research synthesis sticky note 5" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-6-1126.jpg" data-caption="Research synthesis sticky note 6" aria-label="Open: Research synthesis sticky note 6"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-6-800.webp 800w, ../../assets/img/polaris-sticky-6-1126.webp 1126w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-6-1126.jpg" srcset="../../assets/img/polaris-sticky-6-800.jpg 800w, ../../assets/img/polaris-sticky-6-1126.jpg 1126w" sizes="(max-width: 639px) 48vw, 18vw" width="1126" height="1122" alt="Research synthesis sticky note 6" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-7-1128.jpg" data-caption="Research synthesis sticky note 7" aria-label="Open: Research synthesis sticky note 7"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-7-800.webp 800w, ../../assets/img/polaris-sticky-7-1128.webp 1128w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-7-1128.jpg" srcset="../../assets/img/polaris-sticky-7-800.jpg 800w, ../../assets/img/polaris-sticky-7-1128.jpg 1128w" sizes="(max-width: 639px) 48vw, 18vw" width="1128" height="1120" alt="Research synthesis sticky note 7" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-8-646.jpg" data-caption="Research synthesis sticky note 8" aria-label="Open: Research synthesis sticky note 8"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-8-646.webp 646w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-8-646.jpg" srcset="../../assets/img/polaris-sticky-8-646.jpg 646w" sizes="(max-width: 639px) 48vw, 18vw" width="646" height="646" alt="Research synthesis sticky note 8" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-9-646.jpg" data-caption="Research synthesis sticky note 9" aria-label="Open: Research synthesis sticky note 9"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-9-646.webp 646w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-9-646.jpg" srcset="../../assets/img/polaris-sticky-9-646.jpg 646w" sizes="(max-width: 639px) 48vw, 18vw" width="646" height="650" alt="Research synthesis sticky note 9" loading="lazy" decoding="async"></picture></button>
+<button type="button" data-gallery="stickies" data-full="../../assets/img/polaris-sticky-10-654.jpg" data-caption="Research synthesis sticky note 10" aria-label="Open: Research synthesis sticky note 10"><picture><source type="image/webp" srcset="../../assets/img/polaris-sticky-10-654.webp 654w" sizes="(max-width: 639px) 48vw, 18vw"><img src="../../assets/img/polaris-sticky-10-654.jpg" srcset="../../assets/img/polaris-sticky-10-654.jpg 654w" sizes="(max-width: 639px) 48vw, 18vw" width="654" height="652" alt="Research synthesis sticky note 10" loading="lazy" decoding="async"></picture></button>
+</div>
+  </section>
+
+  <section class="section">
+    <div class="row row--end mb">
+      <h2 class="h2">The Polaris API Designer</h2>
+      <div class="prose"><p>A tool for developers and non-developers alike to design, mock, and share APIs.</p></div>
+    </div>
+    <div class="gallery gallery--three contain">
+      <div><img src="../../assets/img/polaris-logo-1.svg" alt="Polaris logo exploration one" loading="lazy"></div>
+      <div><img src="../../assets/img/polaris-logo-2.svg" alt="Polaris logo exploration two" loading="lazy"></div>
+      <div><img src="../../assets/img/polaris-logo-3.svg" alt="Polaris logo exploration three" loading="lazy"></div>
+    </div>
+    <div class="cs-video cs-embed cs-embed--in-section" data-embed="https://embed.figma.com/proto/Gf25iZhtqCYasXtYxz4QNj/Emergency-Local-Prototype?page-id=0%3A1&amp;node-id=1-8460&amp;viewport=1663%2C923%2C0.03&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A8460&amp;embed-host=share" data-embed-title="the Polaris API Designer prototype">
+  
+  <button type="button" class="cs-video__btn"><span class="cs-embed__label">Load the Figma prototype <span aria-hidden="true">↗</span></span></button>
+</div>
+  </section>
+
+  <section class="section">
+    <div class="row row--equal">
+      <div>
+        <h2 class="h2">Usability Testing</h2>
+        <div class="prose">
+          <h3>Research question</h3>
+          <p>Are users of the Polaris API Designer able to discover and use all the features that the platform provides?</p>
+          <h3>Research methods</h3>
+          <p>At the beginning of the engagement, participants are told that after they have time to explore the prototype the researcher will ask them to explain what the Polaris API Designer does to help a user build better APIs faster. They have as much time as they would like to explore the prototype. The researcher has their camera on but is watching, and can answer questions. Afterwards the participant is asked, "Explain to me what the Polaris API Designer is capable of." Their responses are graded against a rubric.</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="h2">Value Testing</h2>
+        <div class="prose">
+          <h3>Research question</h3>
+          <p>Are the features of the Polaris API Designer the features that our developers need to create better APIs faster?</p>
+          <h3>Research methods</h3>
+          <p>After the usability testing, the participant is asked if they would be willing to join the beta program for early access. In exchange, we ask them to participate in further opportunities to give feedback. Finally, participants are asked if they could give the names of three people the research could send additional meeting invites to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="h2">Testing Highlights</h2>
+    <div class="stats">
+      <div class="stat"><p class="stat__n">100%</p><p class="stat__t">of the 1-on-1 participants were able to identify and understand the scorecard, reusable library, and publishing features.</p></div>
+      <div class="stat"><p class="stat__n">100%</p><p class="stat__t">of the 1-on-1 participants were not just interested but excited about joining a beta program.</p></div>
+      <div class="stat"><p class="stat__n">88%<small>± 10.69%</small></p><p class="stat__t">of asynchronous participants in technical roles were open to joining a beta program.</p></div>
+    </div>
+  </section>
+  <a class="next-project" href="../../projects/future-creators-report/" style="--next-color:#3c3a36">
+    <span><span class="next-project__eyebrow">NEXT PROJECT — 04 / 09</span><span class="next-project__title">2026 Future Creators Report</span></span>
+    <span class="next-project__arrow" aria-hidden="true">→</span>
+  </a>
+</main>
+<footer class="site-footer on-white">
+  <span class="site-footer__name">YALE MILLER</span>
+  <div class="site-footer__links">
+    <a href="https://drive.google.com/file/d/1q6sAfwxFcwk1NBoerzAJZkJnyHLh6ytB/view?usp=sharing" target="_blank" rel="noopener">RESUME</a>
+    <a href="https://www.linkedin.com/in/yale-miller/" target="_blank" rel="noopener">LINKEDIN</a>
+    <a href="../../ephemera/">EPHEMERA</a>
+    <span class="site-footer__copy">© 2026 YALE MILLER</span>
+  </div>
+</footer>
+<div class="mobile-menu" id="mobile-menu" data-menu data-open="false" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-menu__bar"><a class="brand" href="../../" aria-label="Yale Miller — home"><img class="brand__logo" src="../../assets/logo/logo.svg" alt="" width="93" height="49">YALE MILLER</a><button type="button" class="menu-btn" data-menu-close aria-label="Close menu" aria-expanded="true"><span></span><span></span></button></div>
+  <nav class="mobile-menu__list" aria-label="Primary (mobile)"><a href="../../#projects">PROJECTS</a><a href="https://drive.google.com/file/d/1q6sAfwxFcwk1NBoerzAJZkJnyHLh6ytB/view?usp=sharing" target="_blank" rel="noopener">RESUME</a><a href="https://www.linkedin.com/in/yale-miller/" target="_blank" rel="noopener">LINKEDIN</a><a href="../../ephemera/">EPHEMERA</a></nav>
+  <p class="mobile-menu__foot">© 2026 Yale Miller</p>
+</div>
+<div class="lightbox" data-lightbox data-open="false" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button type="button" class="lightbox__close" aria-label="Close">×</button>
+  <button type="button" class="lightbox__prev" aria-label="Previous image">←</button>
+  <img class="lightbox__img" alt="">
+  <p class="lightbox__cap"></p>
+  <button type="button" class="lightbox__next" aria-label="Next image">→</button>
+</div>
+<script src="../../js/site.js" defer></script>
+</body>
+</html>

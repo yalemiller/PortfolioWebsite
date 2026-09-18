@@ -1,0 +1,1055 @@
+{
+ "BestOne": {
+  "width": 4608,
+  "height": 2592,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747185429.471,
+  "type": "raster"
+ },
+ "EnhancedGames-01": {
+  "width": 5401,
+  "height": 7201,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747176952.0527,
+  "type": "raster"
+ },
+ "EnhancedGames-02": {
+  "width": 5401,
+  "height": 7201,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747178203.7588,
+  "type": "raster"
+ },
+ "EnhancedGames-03": {
+  "width": 5401,
+  "height": 7201,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747179404.6697,
+  "type": "raster"
+ },
+ "eph-01": {
+  "width": 2922,
+  "height": 1813,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747408495.1084,
+  "type": "raster"
+ },
+ "eph-02": {
+  "type": "static",
+  "file": "eph-02.gif",
+  "mtime": 1789747409994.7327
+ },
+ "eph-03": {
+  "width": 3200,
+  "height": 4267,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747411654.507,
+  "type": "raster"
+ },
+ "eph-04": {
+  "width": 4500,
+  "height": 4500,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747413176.977,
+  "type": "raster"
+ },
+ "eph-05": {
+  "width": 8000,
+  "height": 4500,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747414911.2827,
+  "type": "raster"
+ },
+ "eph-06": {
+  "width": 2492,
+  "height": 1660,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747416528.4988,
+  "type": "raster"
+ },
+ "eph-07": {
+  "width": 486,
+  "height": 748,
+  "widths": [
+   486
+  ],
+  "mtime": 1789747417870.4414,
+  "type": "raster"
+ },
+ "eph-08": {
+  "width": 2550,
+  "height": 3300,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747419587.3503,
+  "type": "raster"
+ },
+ "eph-09": {
+  "width": 1080,
+  "height": 1080,
+  "widths": [
+   800,
+   1080
+  ],
+  "mtime": 1789747420937.7815,
+  "type": "raster"
+ },
+ "eph-10": {
+  "width": 3600,
+  "height": 3600,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747422670.4897,
+  "type": "raster"
+ },
+ "eph-11": {
+  "width": 3600,
+  "height": 3600,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747424270.7222,
+  "type": "raster"
+ },
+ "eph-12": {
+  "width": 776,
+  "height": 776,
+  "widths": [
+   776
+  ],
+  "mtime": 1789747425770.7742,
+  "type": "raster"
+ },
+ "eph-13": {
+  "width": 6988,
+  "height": 9167,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747427204.3174,
+  "type": "raster"
+ },
+ "eph-14": {
+  "width": 5100,
+  "height": 3300,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747428887.584,
+  "type": "raster"
+ },
+ "eph-15": {
+  "width": 1074,
+  "height": 1000,
+  "widths": [
+   800,
+   1074
+  ],
+  "mtime": 1789747430245.1738,
+  "type": "raster"
+ },
+ "eph-16": {
+  "width": 3500,
+  "height": 3500,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747431871.1438,
+  "type": "raster"
+ },
+ "eph-17": {
+  "width": 1080,
+  "height": 1080,
+  "widths": [
+   800,
+   1080
+  ],
+  "mtime": 1789747433295.4524,
+  "type": "raster"
+ },
+ "eph-18": {
+  "width": 2550,
+  "height": 2550,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747435106.8816,
+  "type": "raster"
+ },
+ "eph-19": {
+  "type": "static",
+  "file": "eph-19.gif",
+  "mtime": 1789747436521.1045
+ },
+ "eph-20": {
+  "width": 8000,
+  "height": 4500,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747438078.454,
+  "type": "raster"
+ },
+ "eph-21": {
+  "width": 2550,
+  "height": 3300,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747439637.5354,
+  "type": "raster"
+ },
+ "eph-22": {
+  "width": 2142,
+  "height": 1917,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747441439.1177,
+  "type": "raster"
+ },
+ "eph-23": {
+  "width": 2490,
+  "height": 1654,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747442970.5107,
+  "type": "raster"
+ },
+ "eph-24": {
+  "width": 1160,
+  "height": 1806,
+  "widths": [
+   800,
+   1160
+  ],
+  "mtime": 1789747444253.5376,
+  "type": "raster"
+ },
+ "fcr-1": {
+  "width": 1036,
+  "height": 2072,
+  "widths": [
+   800,
+   1036
+  ],
+  "mtime": 1789747386287.5798,
+  "type": "raster"
+ },
+ "fcr-2": {
+  "width": 1030,
+  "height": 2060,
+  "widths": [
+   800,
+   1030
+  ],
+  "mtime": 1789747388270.7944,
+  "type": "raster"
+ },
+ "fcr-3": {
+  "width": 1028,
+  "height": 2068,
+  "widths": [
+   800,
+   1028
+  ],
+  "mtime": 1789747390270.569,
+  "type": "raster"
+ },
+ "fcr-4": {
+  "width": 1024,
+  "height": 2068,
+  "widths": [
+   800,
+   1024
+  ],
+  "mtime": 1789747392153.9783,
+  "type": "raster"
+ },
+ "fcr-driver-headline": {
+  "width": 2196,
+  "height": 1820,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747397828.2312,
+  "type": "raster"
+ },
+ "fcr-driver-impact": {
+  "width": 2410,
+  "height": 1814,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747399595.1777,
+  "type": "raster"
+ },
+ "fcr-driver-indicators": {
+  "width": 2544,
+  "height": 1816,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747401428.2898,
+  "type": "raster"
+ },
+ "fcr-futures-page": {
+  "width": 2768,
+  "height": 1788,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747403403.8394,
+  "type": "raster"
+ },
+ "fcr-hero": {
+  "width": 3455,
+  "height": 2883,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747384454.0654,
+  "type": "raster"
+ },
+ "fcr-three-horizons": {
+  "width": 1272,
+  "height": 905,
+  "widths": [
+   800,
+   1200,
+   1272
+  ],
+  "mtime": 1789747395978.9866,
+  "type": "raster"
+ },
+ "fcr-undisciplined": {
+  "width": 2184,
+  "height": 2184,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747394259.8125,
+  "type": "raster"
+ },
+ "ForesightLab-09": {
+  "width": 2511,
+  "height": 1763,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747186677.1543,
+  "type": "raster"
+ },
+ "Forum-17": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747171093.8335,
+  "type": "raster"
+ },
+ "Forum-18": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747170001.8013,
+  "type": "raster"
+ },
+ "Forum-20": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747172242.5984,
+  "type": "raster"
+ },
+ "Forum-22": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747168791.7937,
+  "type": "raster"
+ },
+ "Forum-23": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747167749.1348,
+  "type": "raster"
+ },
+ "Forum-26": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747166657.859,
+  "type": "raster"
+ },
+ "Forum-27": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747164227.53,
+  "type": "raster"
+ },
+ "Forum-28": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747163112.389,
+  "type": "raster"
+ },
+ "Forum-29": {
+  "width": 2401,
+  "height": 1351,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747165430.5068,
+  "type": "raster"
+ },
+ "FuturesPoster_Images-01": {
+  "width": 2626,
+  "height": 1324,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747158258.1897,
+  "type": "raster"
+ },
+ "FuturesPoster_Images-05": {
+  "width": 5251,
+  "height": 2647,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747189013.9065,
+  "type": "raster"
+ },
+ "FuturesPoster_Images-06": {
+  "width": 2626,
+  "height": 1323,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747161843.8328,
+  "type": "raster"
+ },
+ "FuturesPoster_Images-07": {
+  "width": 2626,
+  "height": 1324,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747160669.1592,
+  "type": "raster"
+ },
+ "FuturesPoster_Images-08": {
+  "width": 2626,
+  "height": 1324,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747159582.947,
+  "type": "raster"
+ },
+ "gallo-barriers-1": {
+  "width": 3206,
+  "height": 1848,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747373372.351,
+  "type": "raster"
+ },
+ "gallo-barriers-2": {
+  "width": 3206,
+  "height": 1852,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747374777.8806,
+  "type": "raster"
+ },
+ "gallo-current-1": {
+  "width": 3210,
+  "height": 1854,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747367400.7173,
+  "type": "raster"
+ },
+ "gallo-current-2": {
+  "width": 3208,
+  "height": 1848,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747368972.058,
+  "type": "raster"
+ },
+ "gallo-desires-1": {
+  "width": 3206,
+  "height": 1848,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747376147.2263,
+  "type": "raster"
+ },
+ "gallo-desires-2": {
+  "width": 3206,
+  "height": 1848,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747377951.2961,
+  "type": "raster"
+ },
+ "gallo-hero": {
+  "width": 1580,
+  "height": 1420,
+  "widths": [
+   800,
+   1200,
+   1580
+  ],
+  "mtime": 1789747364787.2903,
+  "type": "raster"
+ },
+ "gallo-perception-1": {
+  "width": 3208,
+  "height": 1848,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747370402.5305,
+  "type": "raster"
+ },
+ "gallo-perception-2": {
+  "width": 3210,
+  "height": 1852,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747371745.6562,
+  "type": "raster"
+ },
+ "gallo-presentation": {
+  "width": 4032,
+  "height": 3024,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747366033.3757,
+  "type": "raster"
+ },
+ "Imag1111": {
+  "width": 4284,
+  "height": 5712,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747181789.6726,
+  "type": "raster"
+ },
+ "image24543": {
+  "width": 4284,
+  "height": 5712,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747183103.8762,
+  "type": "raster"
+ },
+ "image64345": {
+  "width": 3024,
+  "height": 4032,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747184253.8054,
+  "type": "raster"
+ },
+ "image645": {
+  "width": 4284,
+  "height": 5712,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747180480.409,
+  "type": "raster"
+ },
+ "kroger-1": {
+  "width": 1088,
+  "height": 844,
+  "widths": [
+   800,
+   1088
+  ],
+  "mtime": 1789747335737.6846,
+  "type": "raster"
+ },
+ "kroger-2": {
+  "width": 1586,
+  "height": 1242,
+  "widths": [
+   800,
+   1200,
+   1586
+  ],
+  "mtime": 1789747339425.931,
+  "type": "raster"
+ },
+ "kroger-3": {
+  "width": 1070,
+  "height": 818,
+  "widths": [
+   800,
+   1070
+  ],
+  "mtime": 1789747340888.9297,
+  "type": "raster"
+ },
+ "nis-group": {
+  "width": 1332,
+  "height": 1064,
+  "widths": [
+   800,
+   1200,
+   1332
+  ],
+  "mtime": 1789747379865.4172,
+  "type": "raster"
+ },
+ "Podcast": {
+  "width": 2626,
+  "height": 1324,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747187773.956,
+  "type": "raster"
+ },
+ "polaris-hero": {
+  "width": 1000,
+  "height": 894,
+  "widths": [
+   800,
+   1000
+  ],
+  "mtime": 1789747342443.9375,
+  "type": "raster"
+ },
+ "polaris-logo-1": {
+  "type": "static",
+  "file": "polaris-logo-1.svg",
+  "mtime": 1789747343885.8772
+ },
+ "polaris-logo-2": {
+  "type": "static",
+  "file": "polaris-logo-2.svg",
+  "mtime": 1789747345444.1252
+ },
+ "polaris-logo-3": {
+  "type": "static",
+  "file": "polaris-logo-3.svg",
+  "mtime": 1789747346952.8428
+ },
+ "polaris-sticky-1": {
+  "width": 960,
+  "height": 966,
+  "widths": [
+   800,
+   960
+  ],
+  "mtime": 1789747350287.617,
+  "type": "raster"
+ },
+ "polaris-sticky-10": {
+  "width": 654,
+  "height": 652,
+  "widths": [
+   654
+  ],
+  "mtime": 1789747363621.2922,
+  "type": "raster"
+ },
+ "polaris-sticky-2": {
+  "width": 1080,
+  "height": 1084,
+  "widths": [
+   800,
+   1080
+  ],
+  "mtime": 1789747351727.796,
+  "type": "raster"
+ },
+ "polaris-sticky-3": {
+  "width": 1086,
+  "height": 1092,
+  "widths": [
+   800,
+   1086
+  ],
+  "mtime": 1789747353260.024,
+  "type": "raster"
+ },
+ "polaris-sticky-4": {
+  "width": 1086,
+  "height": 1086,
+  "widths": [
+   800,
+   1086
+  ],
+  "mtime": 1789747355009.0593,
+  "type": "raster"
+ },
+ "polaris-sticky-5": {
+  "width": 1126,
+  "height": 1126,
+  "widths": [
+   800,
+   1126
+  ],
+  "mtime": 1789747356247.8562,
+  "type": "raster"
+ },
+ "polaris-sticky-6": {
+  "width": 1126,
+  "height": 1122,
+  "widths": [
+   800,
+   1126
+  ],
+  "mtime": 1789747357659.2612,
+  "type": "raster"
+ },
+ "polaris-sticky-7": {
+  "width": 1128,
+  "height": 1120,
+  "widths": [
+   800,
+   1128
+  ],
+  "mtime": 1789747359308.4167,
+  "type": "raster"
+ },
+ "polaris-sticky-8": {
+  "width": 646,
+  "height": 646,
+  "widths": [
+   646
+  ],
+  "mtime": 1789747360729.5867,
+  "type": "raster"
+ },
+ "polaris-sticky-9": {
+  "width": 646,
+  "height": 650,
+  "widths": [
+   646
+  ],
+  "mtime": 1789747362266.8918,
+  "type": "raster"
+ },
+ "polaris-workflow": {
+  "width": 2108,
+  "height": 964,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747348757.8506,
+  "type": "raster"
+ },
+ "SXSW-1": {
+  "width": 2048,
+  "height": 1365,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747173351.2927,
+  "type": "raster"
+ },
+ "SXSW-2": {
+  "width": 1838,
+  "height": 1080,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747174448.855,
+  "type": "raster"
+ },
+ "SXSW-3": {
+  "width": 1792,
+  "height": 1090,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747175638.0637,
+  "type": "raster"
+ },
+ "Thumbnails-03": {
+  "width": 2054,
+  "height": 1210,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747228878.5913,
+  "type": "raster"
+ },
+ "Thumbnails-04": {
+  "width": 2054,
+  "height": 1211,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747227148.2231,
+  "type": "raster"
+ },
+ "Thumbnails-05": {
+  "width": 2054,
+  "height": 1211,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747227844.2964,
+  "type": "raster"
+ },
+ "Thumbnails-06": {
+  "width": 2054,
+  "height": 1211,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747232235.1929,
+  "type": "raster"
+ },
+ "Thumbnails-07": {
+  "width": 2055,
+  "height": 1211,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747229962.611,
+  "type": "raster"
+ },
+ "Thumbnails-08": {
+  "width": 2055,
+  "height": 1210,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747231475.7068,
+  "type": "raster"
+ },
+ "Thumbnails-09": {
+  "width": 2054,
+  "height": 1210,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747230736.9912,
+  "type": "raster"
+ },
+ "uif-launch": {
+  "width": 2000,
+  "height": 900,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747381887.8174,
+  "type": "raster"
+ },
+ "Untitled-2-01": {
+  "width": 2054,
+  "height": 1210,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747232872.84,
+  "type": "raster"
+ },
+ "Untitled-2-02": {
+  "width": 2054,
+  "height": 1210,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1789747233665.7278,
+  "type": "raster"
+ }
+}
