@@ -5,8 +5,7 @@
      slug, oldPath    page at /projects/<slug>/, plus a redirect from the old Webflow /<oldPath>/
      title, tags      card title and tags; the title also heads the case study
      home             false hides the card from the home grid (the page still exists)
-     nda              true lists it under NDA PROJECTS and puts the case study behind a password
-     tint             accent for the hero overlay, quote lead-ins, stats and icons
+     tint            accent for the hero overlay, quote lead-ins, stats and icons
      cover            home card image; hero is the case-study background (grayscale + tint)
      question, sub    hero H1 and optional subline
      facts            [label, value] pairs in the key-facts row
@@ -113,7 +112,7 @@ module.exports = [
     facts: [['TYPE', 'UX/UI Design'], ['TEAM CREDIT', 'Sam Allison, Pierce Gohlke, Jared Price'], ['DATE', 'Fall 2025']],
     overview: "Generative AI: a solution looking for a problem. That is not to say that AI is useless, just that much of what has been asked of designers in the past years is how to integrate AI into existing systems. For this project I was tasked with doing just that for Kroger's upcoming Joint Price & Promotion tool. JP&P has a number of features, but for this project the focus was on the promotion calendar optimizer. Essentially, the tool would optimize the best time to have different promotions (ex: buy one, get one). However, user trust and understanding of the tool was low. This might just be a problem that GenAI can solve.",
     blocks: [
-      { type: 'embed', items: [{ url: 'https://embed.figma.com/proto/djqhWYtnHHMjCQgmmA4jKT/AIExplainer?page-id=2001%3A25779&node-id=2139-68943&p=f&viewport=709%2C-615%2C0.15&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2139%3A68943&embed-host=share', cta: 'LOAD INTERACTIVE PROTOTYPE', label: 'Figma prototype — the GenAI explainer inside the promotion calendar optimizer.' }] },
+      { type: 'embed', items: [{ url: 'https://embed.figma.com/proto/djqhWYtnHHMjCQgmmA4jKT/AIExplainer?page-id=2001%3A25779&node-id=2139-68943&p=f&viewport=709%2C-615%2C0.15&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2139%3A68943&embed-host=share', label: 'Figma prototype — the GenAI explainer inside the promotion calendar optimizer.', ratio: '3/2', maxWidth: '1200px', border: true }] },
       { type: 'quote', q: "You have been managing Kroger's cereal promotion strategy for over 15 years. You have your own methods, your own team, and at the end of the day it's your neck on the line. Now some new software tool wants to tell you how to do your job.", em: 'Would you listen?' },
       { type: 'textImage', h: 'Can we use GenAI to turn the black box transparent?', p: ["Every month data optimization science makes Kroger millions of dollars. It's not going anywhere, but is there a way that we can make the process more transparent?", 'Traditionally, the data science is a black box. Inputs go in, recommendations come out. However, by using GenAI and AI agents three key metrics can be surfaced to the user.'], bullets: ['WHAT changes the optimization is suggesting', 'WHY it wants to make those changes', 'IMPACT of those changes'], img: 'kroger-1', alt: 'GenAI explainer panel showing what, why and impact for a promotion recommendation' },
       { type: 'quote', q: "“I'm managing a billion dollar business in Excel.", em: "It's about time we had something more modern.”", foot: '*Real quote from user research' },
@@ -144,10 +143,9 @@ module.exports = [
     facts: [['TYPE', 'UX/UI Design'], ['TEAM CREDIT', 'Joshua Smith'], ['DATE', 'Fall 2024']],
     overview: "As a data analytics company, 84.51° profits off the development of APIs. However there's a problem. API developers at the company each have their own process to build an API, which results in a lack of standards, which in turn results in a subpar product. Polaris is an API creator tool designed to make it easier for developers and non-developers alike to build APIs. The Polaris API Designer is just one part of the tool that lets developers mock up and share API designs before they have to write a single line of code.",
     blocks: [
-      { type: 'embed', items: [{ url: 'https://embed.figma.com/proto/Gf25iZhtqCYasXtYxz4QNj/Emergency-Local-Prototype?page-id=0%3A1&node-id=1-8460&viewport=1663%2C923%2C0.03&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A8460&embed-host=share', cta: 'LOAD INTERACTIVE PROTOTYPE', label: 'Figma prototype — the Polaris API Designer.' }] },
+      { type: 'embed', items: [{ url: 'https://embed.figma.com/proto/Gf25iZhtqCYasXtYxz4QNj/Emergency-Local-Prototype?page-id=0%3A1&node-id=1-8460&viewport=1663%2C923%2C0.03&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A8460&embed-host=share', label: 'Figma prototype — the Polaris API Designer.', height: 650, border: true }] },
       { type: 'quote', q: 'Going from “I\'m in hell” to', em: '“That would be dope as hell.”', foot: '*Real quotes from user research' },
-      // The soda-fountain illustration is still to come; add `img` and this becomes text + image.
-      { type: 'textImage', h: 'So what even is an API…?', p: ['An API is an Application Programming Interface. Does that clear things up? Probably not — it took me a while to get a handle on what APIs are and how they drive revenue.', "To help, I developed the soda fountain metaphor. 84.51° employees are masters of working with data, just as Coca-Cola employees are masters of making soda. The customer doesn't care what's going on behind the scenes. They just want their nice filtered Kroger shopping data, or cup of Diet Coke, when they ask for it.", "That's where the API comes in. It's a contract of code between us and the customer. You pay and put your cup under Minute Maid and you'll get lemonade. You send us this message and you'll get this array of data."] },
+      { type: 'textImage', img: 'polaris-soda', alt: 'A soda fountain machine with a row of drink dispensers', imgMax: '480px', h: 'So what even is an API…?', p: ['An API is an Application Programming Interface. Does that clear things up? Probably not — it took me a while to get a handle on what APIs are and how they drive revenue.', "To help, I developed the soda fountain metaphor. 84.51° employees are masters of working with data, just as Coca-Cola employees are masters of making soda. The customer doesn't care what's going on behind the scenes. They just want their nice filtered Kroger shopping data, or cup of Diet Coke, when they ask for it.", "That's where the API comes in. It's a contract of code between us and the customer. You pay and put your cup under Minute Maid and you'll get lemonade. You send us this message and you'll get this array of data."] },
       { type: 'cards', eyebrow: 'THE PROBLEM', h: 'At 84.51°, API development is…', cols: 3, items: [
         { icon: 'polaris-logo-1', h: 'Fractured', p: 'Each developer has their own process and standard of API development, which makes collaboration difficult.' },
         { icon: 'polaris-logo-2', h: 'Slow', p: 'The time to build APIs for customers is much slower than the competition, which is leaving revenue on the table.' },
@@ -191,7 +189,7 @@ module.exports = [
     facts: [['TYPE', 'Strategic Foresight'], ['TEAM CREDIT', 'NEXT Innovation Scholars'], ['DATE', '2023 – 2026']],
     overview: "The Future Creators Report is an annual publication put out by the University of Cincinnati's Foresight Lab. It encompasses a full year of strategic foresight research done by the student team, including “artifacts from the future.” These artifacts capture what it would feel like to live in any of these theorized possible futures. The Spring 2026 edition was designed by Yale Miller.",
     blocks: [
-      { type: 'embed', items: [{ url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', cta: 'READ THE REPORT', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '16/10' }] },
+      { type: 'embed', items: [{ url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '16/10' }] },
       { type: 'gallery', h: 'The Foresight Lab', p: ['The University of Cincinnati is one of three institutions in the United States with a strategic foresight program at the undergraduate level — and the newest. The Foresight Lab is an evolving, rapidly growing program that has continually redefined itself over its five years. Besides the Future Creators Report, the Lab puts on an annual forum to present its findings live.', 'This year the posters for the event were designed by Yale Miller alongside project lead Yasmine Shaban.'], imgs: [1, 2, 3, 4].map((n) => ({ img: `fcr-${n}`, alt: 'Futures Forum poster and event material' })), cols: 4, mcols: 2, ratio: '3/4' },
       { type: 'textImage', h: 'Undisciplined by Design', p: ['The Undisciplined by Design podcast is another arm of the Foresight Lab. Host Aaron Bradley and editor Max Kemats interview some of the biggest names in design and innovation. All branding elements of the podcast were designed by Yale Miller.', 'Listen on Apple Podcasts and Spotify — and new with season 3, full-length video interviews on YouTube.'], img: 'fcr-undisciplined', alt: 'Undisciplined by Design podcast branding' },
       { type: 'textImage', flip: true, h: 'So what exactly is strategic foresight?', p: ['Predicting the future is impossible, but that is not the goal of strategic foresight. Rather, it is the practice of analyzing budding trends and fringe markets in order to imagine not the future, but possible futures.', 'By imagining what the worst and best tomorrow would look like, we can make actionable recommendations to achieve that best future.'], img: 'fcr-three-horizons', alt: 'The three-horizons model diagram', caption: 'The three-horizons model.' },
@@ -273,8 +271,8 @@ module.exports = [
     overview: "The NEXT Innovation Scholars Program (NIS) started with a cohort of just 10 students back in 2021. Now, the program is on track to have 100 students. This growth is a significant mark of the program's success, but it also presents a challenge: how does NIS preserve its culture and continue to deliver excellence in the face of such change? As their project for Stanford's University Innovation Fellows Program, students Caroline Berger, Max Kemats, and Yale Miller developed and implemented a new strategic plan for NIS. The plan's name? The NEXT New Deal.",
     blocks: [
       { type: 'embed', items: [
-        { url: 'https://e.issuu.com/embed.html?d=2024-2025_next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', cta: 'READ 2024–25 REPORT', label: '2024–25 NIS Annual Report', ratio: '4/3' },
-        { url: 'https://e.issuu.com/embed.html?d=next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', cta: 'READ 2023–24 REPORT', label: '2023–24 NIS Annual Report', ratio: '4/3' },
+        { url: 'https://e.issuu.com/embed.html?d=2024-2025_next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2024–25 NIS Annual Report', ratio: '1/1', minHeight: 326 },
+        { url: 'https://e.issuu.com/embed.html?d=next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2023–24 NIS Annual Report', ratio: '1/1', minHeight: 350 },
       ] },
       { type: 'text', h: 'Who are the NEXT Innovation Scholars?', p: ['Want to know all about the NEXT Innovation Scholars? Check out the two annual reports I designed above for a detailed account of all that we do.', "NIS is the University of Cincinnati's premier design thinking and innovation scholarship program. Each year the program accepts a cohort of 10 to 15 new students from any college or major. Multidisciplinary teams are at the core of everything NIS does.", 'Students participate in at least one project each semester. Many are with outside commercial partners such as P&G, KAO Brands, King Records, and more. Others are insights projects or strategic foresight reports that exist solely within the university ecosystem.'] },
       { type: 'textImage', h: 'And who are the University Innovation Fellows?', p: ["Lots of innovation and acronyms, but I assure you these are two different programs! While the NEXT Innovation Scholars is a program within the University of Cincinnati, the University Innovation Fellows is a global fellowship created and run by Stanford's d.school.", 'I was accepted into the 2024 cohort alongside fellow UC students Max Kemats and Caroline Berger. Each UIF team completes a year-long project, then travels to the Netherlands to share their work at a conference.'], img: 'uif-launch', alt: 'University Innovation Fellows launch' },
@@ -287,16 +285,23 @@ module.exports = [
     oldPath: 'pg',
     title: 'Redesigning Iconic Brands for the Modern Consumer with P&G',
     tags: ['User Research', 'Graphic Design'],
-    nda: true,
-    partner: 'Procter & Gamble',
     tint: '#0a4a9e',
     cover: 'Untitled-2-01',
     coverAlt: 'P&G project cover',
-    hero: 'Untitled-2-01',
-    question: 'How might iconic brands earn their place with the modern consumer?',
-    summary: 'User research and graphic design for Procter & Gamble. Details are under NDA.',
-    facts: [['TYPE', 'User Research, Graphic Design'], ['PARTNER', 'Procter & Gamble'], ['STATUS', 'Under NDA']],
-    overview: "This project was completed under a non-disclosure agreement with Procter & Gamble. It combined user research with graphic design to rethink how a set of iconic brands present themselves to today's consumer.",
+    hero: 'pg-hero',
+    sub: 'Package Redesigns with Procter & Gamble',
+    question: 'How do we redesign classic P&G products for the modern consumer?',
+    summary: 'Three back-to-back package redesign sprints for Pantene, Dawn Powerwash and Bounce with Procter & Gamble.',
+    facts: [['TYPE', 'User Research, Graphic Design'], ['TEAM CREDIT', 'NEXT Innovation Scholars'], ['DATE', 'Spring 2025']],
+    overview: "In Fall 2024, Yale and a team of students pitched to more than a hundred P&G employees as to why they should work with the NEXT Innovation Scholars. This is what came out of that pitch. Not just one project, but three back to back sprints redesigning some of P&G's most iconic products: Pantene, DAWN Powerwash, and Bounce Dryer Sheets. Together, the team conducted user interviews, landscape research, and field observations to then design a brand new look for all three products.",
+    blocks: [
+      { type: 'quote', q: '1 Semester. 3 Iconic Products.', em: '100+ User Interviews.' },
+      { type: 'cards', eyebrow: 'THE PRESENTATIONS', h: 'Click below to see our presentations', cols: 3, items: [
+        { img: 'pg-pantene', alt: 'Pantene Keratin product packaging', h: 'Pantene', p: "To begin the project, the team was tasked with imagining how Pantene's specialty Keratin product could be redesigned to help it stand out on the pages of Amazon.", link: { href: 'https://drive.google.com/file/d/1tD7MsUCeHQ2IV6X1dbip5OiLm9OxiHzH/view?usp=sharing', text: 'VIEW THE PANTENE PRESENTATION' } },
+        { img: 'pg-powerwash', alt: 'Dawn Powerwash dish spray and refill bottle', h: 'Powerwash', p: "Did you know you shouldn't use water with Powerwash? Neither did we! The largest portion of the project was devoted to helping consumers better understand the correct way to use DAWN Powerwash and how it is different than normal soap.", link: { href: 'https://drive.google.com/file/d/1M-pNVMYQnYx1vAaB7OKnzQPtqkgv1GQs/view?usp=sharing', text: 'VIEW THE POWERWASH PRESENTATION' } },
+        { img: 'pg-bounce', alt: 'Bounce Outdoor Fresh dryer sheets box', h: 'Bounce', p: 'The final sprint was dedicated to redesigning the front of pack for Bounce Dryer Sheets. This time the team mixed it up, creating an experiential workshop instead of a typical presentation.', link: { href: 'https://drive.google.com/file/d/1QbiNbAG9lkU58wcbWgd7NpB7RHUL_wTU/view?usp=sharing', text: 'VIEW THE BOUNCE PRESENTATION' } },
+      ] },
+    ],
   },
 
   /* 08 ---------------------------------------------------------------- */
@@ -305,16 +310,18 @@ module.exports = [
     oldPath: 'bts',
     title: 'Preparing for the Future of Consulting in the Age of AI with BTS',
     tags: ['Strategy'],
-    nda: true,
-    partner: 'BTS',
     tint: '#7a5a2a',
     cover: 'Untitled-2-02',
     coverAlt: 'BTS project cover',
-    hero: 'Untitled-2-02',
-    question: 'How does a consultancy prepare for a future where AI does the analysis?',
-    summary: 'Strategy work with BTS on the future of consulting in the age of AI. Details are under NDA.',
-    facts: [['TYPE', 'Strategy'], ['PARTNER', 'BTS'], ['STATUS', 'Under NDA']],
-    overview: 'This project was completed under a non-disclosure agreement with BTS. It was a strategy engagement exploring how consulting practice, talent, and offerings need to change as AI takes on more of the analytical work.',
+    hero: 'bts-hero',
+    sub: 'Strategy with BTS Consulting',
+    question: 'How does a global consultancy continue to flourish in the AI-age?',
+    summary: 'A semester of competitor analysis, employee interviews and landscape research on where BTS goes next in the age of AI.',
+    facts: [['TYPE', 'Strategy'], ['TEAM CREDIT', 'NEXT Innovation Scholars'], ['DATE', 'Fall 2024']],
+    overview: "No industry is safe from the disruption caused by advances in AI and consulting is no exception. While many companies are rushing to invest in this new technology, fearful they might fall behind, BTS Consulting is instead asking how they can evolve to stay ahead. The NEXT Innovation Scholars spent a semester analyzing BTS's competitors, interviewing their employees, and conducting thorough landscape research in order to find BTS's best next steps.",
+    blocks: [
+      { type: 'embed', items: [{ url: 'https://drive.google.com/file/d/1NDwVRMRcOxrrje0T35em5Bmrsh2kz-_D/preview', label: 'BTS x NIS final presentation (Google Drive).', link: 'https://drive.google.com/file/d/1NDwVRMRcOxrrje0T35em5Bmrsh2kz-_D/view?usp=sharing', ratio: '16/10', border: true }] },
+    ],
   },
 
   /* 09 ---------------------------------------------------------------- */

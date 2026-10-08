@@ -31,13 +31,19 @@ test('nine projects with unique slugs and the fields the templates need', () => 
   for (const p of projects) {
     for (const f of ['slug', 'title', 'tags', 'tint', 'cover', 'question', 'facts', 'overview']) assert.ok(p[f], `${p.slug}: ${f}`);
     assert.match(p.tint, /^#[0-9a-f]{6}$/i, `${p.slug}: tint`);
-    assert.ok(p.nda || Array.isArray(p.blocks), `${p.slug}: blocks`);
-    if (p.nda) assert.ok(p.partner, `${p.slug}: partner`);
+    assert.ok(Array.isArray(p.blocks) && p.blocks.length, `${p.slug}: blocks`);
   }
 });
 
-test('home grid: six selected projects, then the two NDA projects', () => {
-  const selected = projects.filter((p) => !p.nda && p.home !== false).map((p) => p.slug);
-  assert.deepEqual(selected, ['futures-forum', 'kroger-genai', 'polaris-api-designer', 'ej-gallo', 'next-new-deal', 'workshops']);
-  assert.deepEqual(projects.filter((p) => p.nda).map((p) => p.slug), ['pg', 'bts']);
+test('home grid lists every project except the Future Creators Report', () => {
+  const selected = projects.filter((p) => p.home !== false).map((p) => p.slug);
+  assert.deepEqual(selected, ['futures-forum', 'kroger-genai', 'polaris-api-designer', 'ej-gallo', 'next-new-deal', 'pg', 'bts', 'workshops']);
+});
+
+test('embed URLs are valid HTTPS URLs', () => {
+  for (const p of projects) {
+    for (const b of p.blocks.filter((x) => x.type === 'embed')) {
+      for (const e of b.items) assert.equal(new URL(e.url).protocol, 'https:', `${p.slug}: ${e.url}`);
+    }
+  }
 });

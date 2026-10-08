@@ -26,7 +26,7 @@ test('every block type renders', () => {
     quote: { q: 'Lead.', em: 'Rest.' },
     gallery: { imgs: ['a', 'b'] },
     cards: { items: [{ h: 'Card' }] },
-    embed: { items: [{ url: 'https://example.com/e', cta: 'LOAD', label: 'Label' }] },
+    embed: { items: [{ url: 'https://example.com/e', label: 'Label' }] },
     carousel: { h: 'Heading', imgs: ['a', 'b'] },
     story: { h: 'Heading', storyTitle: 'Title', story: ['1', '2', '3', '4'] },
     video: { provider: 'vimeo', id: '1', poster: 'p', title: 'Video' },
@@ -90,11 +90,27 @@ test('card icons are tinted masks', () => {
   assert.match(html, /mask-image:url\('full\/logo'\)/);
 });
 
-test('embeds only carry the URL until clicked', () => {
-  const html = render({ type: 'embed', items: [{ url: 'https://example.com/e?a=1&b=2', cta: 'LOAD', label: 'L', ratio: '4/3' }] });
-  assert.doesNotMatch(html, /<iframe/);
-  assert.match(html, /data-embed="https:\/\/example.com\/e\?a=1&amp;b=2"/);
-  assert.match(html, /aspect-ratio:4\/3/);
+test('embeds are lazy iframes sized like the host embed code', () => {
+  const html = render({ type: 'embed', items: [
+    { url: 'https://embed.figma.com/proto/x?a=1&b=2', label: 'Kroger', ratio: '3/2', maxWidth: '1200px', border: true },
+    { url: 'https://embed.figma.com/proto/y', label: 'Polaris', height: 650 },
+    { url: 'https://e.issuu.com/embed.html?d=r', label: 'Report', ratio: '1/1', minHeight: 326, link: 'https://issuu.com/r' },
+  ] });
+  assert.equal((html.match(/<iframe [^>]*loading="lazy"/g) || []).length, 3);
+  assert.match(html, /class="embed embed--border" style="aspect-ratio:3\/2;max-width:1200px"><iframe src="https:\/\/embed.figma.com\/proto\/x\?a=1&amp;b=2" title="Kroger"/);
+  assert.match(html, /class="embed embed--fixed" style="--e-h:650px">/);
+  assert.match(html, /style="aspect-ratio:1\/1;min-height:326px"/);
+  assert.match(html, /--e-cols:3/);
+  // Issuu's own embed code sandboxes the frame; Figma's doesn't.
+  assert.equal((html.match(/sandbox="allow-top-navigation /g) || []).length, 1);
+  assert.match(html, /Report <a href="https:\/\/issuu.com\/r" target="_blank" rel="noopener">Open in a new tab/);
+});
+
+test('image cards lead with a linked square image and end with the link', () => {
+  const html = render({ type: 'cards', items: [{ img: 'pantene', alt: 'Pantene', h: 'Pantene', p: 'Text', link: { href: 'https://example.com/deck', text: 'VIEW' } }] });
+  assert.match(html, /class="cs-card cs-card--media"><a class="cs-card__media" href="https:\/\/example.com\/deck"[^>]*tabindex="-1" aria-hidden="true"><img data-img="pantene"/);
+  assert.match(html, /<a class="cs-card__link" href="https:\/\/example.com\/deck" target="_blank" rel="noopener">VIEW <span aria-hidden="true">↗<\/span><\/a><\/div>/);
+  assert.match(render({ type: 'cards', items: [{ img: 'a', h: 'No link' }] }), /<div class="cs-card__media">/);
 });
 
 test('carousel starts on the first slide', () => {

@@ -1249,5 +1249,65 @@
   ],
   "mtime": 1791461129491.4563,
   "type": "raster"
+ },
+ "bts-hero": {
+  "width": 1254,
+  "height": 836,
+  "widths": [
+   800,
+   1200,
+   1254
+  ],
+  "mtime": 1791473861838.735,
+  "type": "raster"
+ },
+ "pg-bounce": {
+  "width": 1600,
+  "height": 1600,
+  "widths": [
+   800,
+   1200,
+   1600
+  ],
+  "mtime": 1791473862071.3242,
+  "type": "raster"
+ },
+ "pg-hero": {
+  "width": 759,
+  "height": 507,
+  "widths": [
+   759
+  ],
+  "mtime": 1791473861616.3647,
+  "type": "raster"
+ },
+ "pg-pantene": {
+  "width": 800,
+  "height": 800,
+  "widths": [
+   800
+  ],
+  "mtime": 1791473862058.3188,
+  "type": "raster"
+ },
+ "pg-powerwash": {
+  "width": 1200,
+  "height": 1200,
+  "widths": [
+   800,
+   1200
+  ],
+  "mtime": 1791473862065.323,
+  "type": "raster"
+ },
+ "polaris-soda": {
+  "width": 1000,
+  "height": 894,
+  "widths": [
+   800,
+   1000
+  ],
+  "mtime": 1791473861387.4119,
+  "type": "raster"
  }
 }

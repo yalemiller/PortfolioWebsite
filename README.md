@@ -7,7 +7,7 @@ The current design spec is [`docs/handoff-v2/README.md`](docs/handoff-v2/README.
 ## Layout
 
 ```
-index.html                  Home (hero + typewriter + selected and NDA project grids)
+index.html                  Home (hero + typewriter + project grid)
 projects/<slug>/index.html  Nine case studies (generated)
 ephemera/index.html         Ephemera gallery (generated)
 scroll-like-me/index.html   Curated flowing feed (generated)
@@ -15,7 +15,6 @@ scroll-like-me/index.html   Curated flowing feed (generated)
 404.html                    Not-found page (generated)
 css/site.css                All styles (design tokens at the top)
 js/site.js                  Typewriter, phone menu, lightbox, embeds, carousels, tabs, story toggle
-js/nda.js                   Password gate for the NDA case studies
 assets/img/src/             Original images (keep these)
 assets/img/                 Generated 800/1200/1600px WebP + JPEG sets + manifest.json
 assets/logo/logo.svg        Logo
@@ -24,7 +23,6 @@ data/ephemera.js            Ephemera image list
 data/scroll-feed.js         Scroll Like Me selections, newest first
 build.js                    Page generator: page chrome, home, case studies, ephemera
 lib/blocks.js               Case-study content blocks -> HTML
-lib/nda.js                  Build-time encryption for the NDA case studies
 lib/html.js                 Escaping and small HTML helpers
 scripts/images.js           Image pipeline (sharp)
 test/                       node --test suites
@@ -40,21 +38,13 @@ test/                       node --test suites
 npm install          # once — installs sharp for the image pipeline
 npm run images       # resize new/changed images into assets/img/
 npm run build        # regenerate every page
-npm test             # block rendering, content/manifest checks, NDA encryption
+npm test             # block rendering and content/manifest checks
 npm run serve        # preview at http://127.0.0.1:8765
 ```
 
-Still to supply (each has a placeholder): the 2025 Futures Forum posters and the 2026/2025 report embed URLs (the `tabs` blocks in the Futures Forum entry), and the Polaris soda-fountain illustration (add `img` to the "So what even is an API…?" block).
+Still to supply (each has a placeholder): the 2025 Futures Forum posters and the 2026/2025 report embed URLs (the `tabs` blocks in the Futures Forum entry).
 
-## NDA case studies
-
-GitHub Pages can't password-protect a URL, so the P&G and BTS pages are encrypted at build time instead. Put the protected blocks in `private/pg.js` or `private/bts.js` (gitignored; `module.exports = { blocks: [ … ] }`, same format as `data/projects.js`) and build with the password set:
-
-```bash
-NDA_PASSWORD='the-password' npm run build
-```
-
-The page then carries the blocks encrypted (AES-256-GCM, PBKDF2 key) and a password field; `js/nda.js` decrypts them in the browser. Without a private file the page shows only the request-access panel. The build stops before writing anything if a private file exists but `NDA_PASSWORD` isn't set. Images used in protected blocks are still ordinary public files under `assets/img/`, so keep anything truly confidential out of them. Each build re-encrypts with a fresh salt, so the NDA pages change on every build while protected content exists.
+Embeds (`embed` blocks) are ordinary iframes with `loading="lazy"`, sized like each host's own embed code: `ratio`, or a fixed desktop `height`, plus optional `minHeight`, `maxWidth` and `border`. Extra attributes a host needs (Issuu's `sandbox`/`allow`) are set by hostname in `lib/blocks.js`. A Google Drive file embeds with its `/preview` URL.
 
 Committed output (`index.html`, `projects/`, `ephemera/`, the redirect folders and `assets/img/*.{webp,jpg}`) is what gets deployed, so commit after building.
 
@@ -104,7 +94,7 @@ Everything in the repository root is servable as-is. The site is served by GitHu
 ## Notes
 
 - Fonts load from Google Fonts (Poppins 400–700, Open Sans 400/600) with `display=swap`.
-- The Vimeo video, Figma prototypes and Issuu reports only load their iframes on click.
+- The Futures Forum video and report frames load their iframes on click; the Figma, Issuu and Drive embeds load lazily as they scroll into view.
 - Sizes interpolate between the 390px and 1200px designs; multi-column layouts collapse at 820px. Content stops widening at 1440px.
 - Carousels advance every 4.5s and the home typewriter animates, except under `prefers-reduced-motion`.
 - The resume link is the Google Drive file from the design handoff (`YaleMiller_Resume.pdf`).

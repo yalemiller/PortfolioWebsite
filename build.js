@@ -1,16 +1,11 @@
 /* Static site generator for yalemiller.com.
    node build.js  ->  writes index.html, projects/<slug>/index.html, ephemera/index.html,
-   scroll-like-me/index.html, 404.html and redirect stubs for the old Webflow paths. No dependencies.
-
-   NDA pages: put the protected blocks in private/<slug>.js (gitignored, same block format as
-   data/projects.js) and build with NDA_PASSWORD set. Without a private file the page shows the
-   request-access gate only. */
+   scroll-like-me/index.html, 404.html and redirect stubs for the old Webflow paths. No dependencies. */
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const { esc, rich } = require('./lib/html');
 const renderBlocks = require('./lib/blocks');
-const nda = require('./lib/nda');
 
 const ROOT = __dirname;
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'img', 'manifest.json'), 'utf8'));
@@ -154,8 +149,7 @@ function lightbox() {
 </div>`;
 }
 
-const scripts = (base, extra = []) => [`${base}js/site.js`, ...extra]
-  .map((src) => `<script src="${src}" defer></script>`).join('\n') + '\n</body>\n</html>\n';
+const scripts = (base) => `<script src="${base}js/site.js" defer></script>\n</body>\n</html>\n`;
 
 /* ---------------- data ---------------- */
 const projects = require('./data/projects.js');
@@ -167,7 +161,7 @@ const projectHref = (base, p) => `${base}projects/${p.slug}/`;
 function card(base, H, p) {
   return `
     <a class="card" href="${projectHref(base, p)}" style="--card-color:${p.tint}">
-      <span class="card__media">${H.pic(p.cover, { alt: p.coverAlt || '', cls: 'card__img', sizes: '(max-width: 820px) 45vw, 31vw' })}${p.nda ? '<span class="card__badge"><span class="hide-sm">PASSWORD PROTECTED</span><span class="show-sm">LOCKED</span></span>' : ''}<span class="card__bar"></span></span>
+      <span class="card__media">${H.pic(p.cover, { alt: p.coverAlt || '', cls: 'card__img', sizes: '(max-width: 820px) 45vw, 31vw' })}<span class="card__bar"></span></span>
       <span class="card__title"><span class="card__title-text">${esc(p.title)}</span><span class="card__arrow" aria-hidden="true">→</span></span>
       <span class="card__tags">${esc(p.tags.join(' · '))}</span>
     </a>`;
@@ -176,8 +170,7 @@ function card(base, H, p) {
 function buildHome() {
   const base = '';
   const H = makeHelpers(base);
-  const selected = projects.filter((p) => !p.nda && p.home !== false);
-  const ndaProjects = projects.filter((p) => p.nda);
+  const selected = projects.filter((p) => p.home !== false);
   const phrases = SITE.phrases;
 
   const html = `${head(base, { title: SITE.title, description: SITE.description })}
@@ -191,9 +184,6 @@ ${header(base, { current: 'home' })}
   <div class="section-rule" id="projects"><h2 class="section-rule__label">SELECTED PROJECTS</h2></div>
   <div class="grid">${selected.map((p) => card(base, H, p)).join('')}
   </div>
-  <div class="section-rule" id="nda"><h2 class="section-rule__label">NDA PROJECTS</h2><span class="section-rule__note">Password protected<span class="hide-sm"> · request access</span></span></div>
-  <div class="grid grid--nda">${ndaProjects.map((p) => card(base, H, p)).join('')}
-  </div>
 </main>
 ${footer(base)}
 ${scripts(base)}`;
@@ -201,51 +191,12 @@ ${scripts(base)}`;
 }
 
 /* ---------------- case study ---------------- */
-/* Protected NDA content by slug, from private/<slug>.js. Checked before any page is written so a
-   missing password can't leave a half-built site. */
-function loadProtected() {
-  const found = {};
-  for (const p of projects.filter((x) => x.nda)) {
-    const file = path.join(ROOT, 'private', `${p.slug}.js`);
-    if (fs.existsSync(file)) found[p.slug] = require(file);
-  }
-  const files = Object.keys(found).map((slug) => `private/${slug}.js`);
-  if (files.length && !process.env.NDA_PASSWORD) {
-    throw new Error(`${files.join(', ')} found but NDA_PASSWORD is not set; refusing to build without it.`);
-  }
-  return found;
-}
-const protectedContent = loadProtected();
-
-/* The NDA gate. With protected content it carries the encrypted blocks and a password form. */
-function ndaGate(p, H) {
-  const priv = protectedContent[p.slug];
-  const payload = priv ? nda.encrypt(renderBlocks(priv.blocks, { H, slug: p.slug }), process.env.NDA_PASSWORD) : null;
-  const form = payload ? `
-    <form class="nda__form">
-      <label class="eyebrow" for="nda-password">PASSWORD</label>
-      <div class="nda__row"><input class="nda__input" id="nda-password" type="password" autocomplete="current-password" required><button type="submit" class="nda__submit">UNLOCK</button></div>
-      <p class="nda__error" role="alert"></p>
-    </form>` : '';
-  return `<section class="cs-sec">
-  <div class="nda" data-nda>
-    <p class="eyebrow">PASSWORD PROTECTED</p>
-    <h2 class="cs-h2">This case study is under NDA.</h2>
-    <p class="cs-body">The work was completed under a non-disclosure agreement with ${esc(p.partner)}, so it's shared by request. ${payload ? 'Enter the password to read it, or request access below.' : "Request access and I'll walk you through it."}</p>${form}
-    <a class="nda__request" href="${SITE.linkedin}" target="_blank" rel="noopener">REQUEST ACCESS <span aria-hidden="true">↗</span></a>
-  </div>${payload ? `\n  <script type="application/json" data-nda-payload>${JSON.stringify(payload)}</script>` : ''}
-</section>
-<div data-nda-content></div>`;
-}
-
 function buildProject(p, i) {
   const base = '../../';
   const H = makeHelpers(base);
   const n = projects.length;
   const next = projects[(i + 1) % n];
   const facts = p.facts.map(([l, v]) => `<div><dt>${esc(l)}</dt><dd>${esc(v)}</dd></div>`).join('');
-  const body = p.nda ? ndaGate(p, H) : renderBlocks(p.blocks, { H, slug: p.slug });
-  const protectedPage = body.includes('data-nda-payload');
 
   const html = `${head(base, { title: `${p.title} — Yale Miller`, description: p.summary || p.question, themeColor: p.tint, accent: p.tint })}
 <div class="cs-hero">
@@ -265,16 +216,16 @@ function buildProject(p, i) {
     <h2 class="cs-intro__title">${esc(p.title)}</h2>
     <div><p class="eyebrow">OVERVIEW</p><p class="cs-intro__lead">${rich(p.overview)}</p></div>
   </section>
-${body}
+${renderBlocks(p.blocks, { H, slug: p.slug })}
   <a class="next-project" href="${projectHref(base, next)}">
-    <span><span class="next-project__eyebrow">NEXT PROJECT — ${pad(((i + 1) % n) + 1)} / ${pad(n)}</span><span class="next-project__title">${esc(next.title)}${next.nda ? ' (NDA)' : ''}</span></span>
+    <span><span class="next-project__eyebrow">NEXT PROJECT — ${pad(((i + 1) % n) + 1)} / ${pad(n)}</span><span class="next-project__title">${esc(next.title)}</span></span>
     <span class="next-project__arrow" aria-hidden="true">→</span>
   </a>
 </main>
 ${footer(base)}
 </div>
 ${lightbox()}
-${scripts(base, protectedPage ? [`${base}js/nda.js`] : [])}`;
+${scripts(base)}`;
   write(`projects/${p.slug}/index.html`, html);
 
   // Redirect stub for the old Webflow path.
