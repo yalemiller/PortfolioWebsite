@@ -42,8 +42,9 @@ test('home grid lists every project except the Future Creators Report', () => {
 
 test('embed URLs are valid HTTPS URLs', () => {
   for (const p of projects) {
-    for (const b of p.blocks.filter((x) => x.type === 'embed')) {
-      for (const e of b.items) assert.equal(new URL(e.url).protocol, 'https:', `${p.slug}: ${e.url}`);
+    for (const b of p.blocks) {
+      const embeds = b.type === 'embed' ? b.items : b.type === 'tabs' && b.kind === 'embed' ? b.panels.filter((x) => x.url) : [];
+      for (const e of embeds) assert.equal(new URL(e.url).protocol, 'https:', `${p.slug}: ${e.url}`);
     }
   }
 });

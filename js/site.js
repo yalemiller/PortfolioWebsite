@@ -1,7 +1,6 @@
 /* yalemiller.com — vanilla JS, no dependencies.
-   Typewriter, phone menu, lightbox, click-to-load video and embeds, carousels, year tabs and the
-   expanding story. Components inside an element can be (re)initialised with window.YM.init(el),
-   which js/nda.js calls after it unlocks a case study. */
+   Typewriter, phone menu, lightbox, click-to-load video, carousels, year tabs and the expanding
+   story. Components inside an element can be (re)initialised with window.YM.init(el). */
 (function () {
   'use strict';
 
@@ -165,34 +164,23 @@
     }, { passive: true });
   }
 
-  /* ---------------- Click-to-load video and embeds ----------------
-     No iframe is created until the visitor asks for it. */
-  function mount(box, src, title, allow) {
+  /* ---------------- Click-to-load video ----------------
+     The player iframe isn't created until the visitor presses play. */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-video] .cs-video__btn');
+    if (!btn) return;
+    var box = btn.closest('[data-video]');
+    var id = box.getAttribute('data-video-id');
     var iframe = document.createElement('iframe');
-    iframe.src = src;
-    iframe.title = title;
-    if (allow) iframe.setAttribute('allow', allow);
+    iframe.src = box.getAttribute('data-video') === 'youtube'
+      ? 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0'
+      : 'https://player.vimeo.com/video/' + id + '?autoplay=1&dnt=1';
+    iframe.title = box.getAttribute('data-video-title') || 'Video';
+    iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
     iframe.setAttribute('allowfullscreen', '');
     box.setAttribute('data-loaded', 'true');
     box.innerHTML = '';
     box.appendChild(iframe);
-  }
-  document.addEventListener('click', function (e) {
-    var video = e.target.closest('[data-video] .cs-video__btn');
-    if (video) {
-      var vbox = video.closest('[data-video]');
-      var id = vbox.getAttribute('data-video-id');
-      var src = vbox.getAttribute('data-video') === 'youtube'
-        ? 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0'
-        : 'https://player.vimeo.com/video/' + id + '?autoplay=1&dnt=1';
-      mount(vbox, src, vbox.getAttribute('data-video-title') || 'Video', 'autoplay; fullscreen; picture-in-picture');
-      return;
-    }
-    var idle = e.target.closest('[data-embed] button.embed__idle');
-    if (idle) {
-      var ebox = idle.closest('[data-embed]');
-      mount(ebox, ebox.getAttribute('data-embed'), ebox.getAttribute('data-embed-title') || 'Embedded content', 'fullscreen');
-    }
   });
 
   /* ---------------- Carousels ----------------

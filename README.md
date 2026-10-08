@@ -11,7 +11,7 @@ index.html                  Home (hero + typewriter + project grid)
 projects/<slug>/index.html  Nine case studies (generated)
 ephemera/index.html         Ephemera gallery (generated)
 resume/index.html           Resume page: the PDF shown inline, plus download (generated)
-scroll-like-me/index.html   Curated flowing feed (generated)
+scroll-like-me/index.html   Curated flowing feed (generated; hidden for now, see below)
 <old-webflow-path>/         Redirect stubs so old links keep working (generated)
 404.html                    Not-found page (generated)
 css/site.css                All styles (design tokens at the top)
@@ -45,7 +45,7 @@ npm test             # block rendering and content/manifest checks
 npm run serve        # preview at http://127.0.0.1:8765
 ```
 
-Still to supply (each has a placeholder): the 2025 Futures Forum posters and the 2026/2025 report embed URLs (the `tabs` blocks in the Futures Forum entry).
+Still to supply (each has a placeholder): the 2025 Futures Forum posters and the 2025 report embed URL (the `tabs` blocks in the Futures Forum entry).
 
 Embeds (`embed` blocks) are ordinary iframes with `loading="lazy"`, sized like each host's own embed code: `ratio`, or a fixed desktop `height`, plus optional `minHeight`, `maxWidth` and `border`. Extra attributes a host needs (Issuu's `sandbox`/`allow`) are set by hostname in `lib/blocks.js`. A Google Drive file embeds with its `/preview` URL.
 
@@ -56,6 +56,8 @@ Committed output (`index.html`, `projects/`, `ephemera/`, the redirect folders a
 Replace `assets/YaleMiller_Resume.pdf` with the new PDF (keep the file name), then commit and push. No rebuild is needed: the resume page reads the PDF when it loads, and the download button serves the same file. To use a different file name, change `resumePdf` in `build.js` and rebuild.
 
 ## Updating Scroll Like Me
+
+The page is hidden for now: `scrollLikeMe: false` in `build.js` keeps it out of the nav and footer and stops it being built. Set it to `true` and rebuild to bring it back.
 
 Edit `data/scroll-feed.js`, then run `npm run build`. Put new items at the top of
 the `items` array; the feed preserves your order. Each post can include `note`
@@ -101,7 +103,7 @@ Everything in the repository root is servable as-is. The site is served by GitHu
 ## Notes
 
 - Fonts load from Google Fonts (Poppins 400–700, Open Sans 400/600) with `display=swap`.
-- The Futures Forum video and report frames load their iframes on click; the Figma, Issuu and Drive embeds load lazily as they scroll into view.
+- The Futures Forum video loads its player on click; the Figma, Issuu and Drive embeds (including the year-tabbed reports) load lazily as they scroll into view.
 - Sizes interpolate between the 390px and 1200px designs; multi-column layouts collapse at 820px. Content stops widening at 1440px.
 - Carousels advance every 4.5s and the home typewriter animates, except under `prefers-reduced-motion`.
 - RESUME in the nav and footer opens `/resume/`, which shows the PDF on the page (pdf.js, so it also works on phones) with a download button. Without JavaScript it falls back to the browser's PDF viewer.

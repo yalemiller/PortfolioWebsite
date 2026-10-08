@@ -26,7 +26,6 @@ module.exports = [
     cover: 'Thumbnails-07',
     coverAlt: 'Futures Forum 2026 poster series',
     hero: 'forum-hero',
-    heroRule: false,
     heroCount: true,
     question: 'How might we let you step into the worlds of the future?',
     summary: 'Posters, artifacts and an experiential showcase for the University of Cincinnati Foresight Lab’s 2026 Futures Forum.',
@@ -47,10 +46,10 @@ module.exports = [
         ],
       },
       {
-        // Report embed URLs to come: paste an Issuu embed URL into `url` and it loads on click.
-        type: 'tabs', kind: 'report', label: 'THE REPORTS', panels: [
-          { tab: '2026', title: '2026 Report', url: '' },
-          { tab: '2025', title: '2025 Report', url: '' },
+        // 2025 report to come: add its Issuu embed `url` (and a `label`) to the 2025 panel.
+        type: 'tabs', kind: 'embed', label: 'THE REPORTS', panels: [
+          { tab: '2026', url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '5/3', minHeight: 326 },
+          { tab: '2025', ratio: '5/3', empty: '2025 REPORT — COMING SOON' },
         ],
       },
       {
@@ -189,7 +188,7 @@ module.exports = [
     facts: [['TYPE', 'Strategic Foresight'], ['TEAM CREDIT', 'NEXT Innovation Scholars'], ['DATE', '2023 – 2026']],
     overview: "The Future Creators Report is an annual publication put out by the University of Cincinnati's Foresight Lab. It encompasses a full year of strategic foresight research done by the student team, including “artifacts from the future.” These artifacts capture what it would feel like to live in any of these theorized possible futures. The Spring 2026 edition was designed by Yale Miller.",
     blocks: [
-      { type: 'embed', items: [{ url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '16/10' }] },
+      { type: 'embed', items: [{ url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '5/3', minHeight: 326 }] },
       { type: 'gallery', h: 'The Foresight Lab', p: ['The University of Cincinnati is one of three institutions in the United States with a strategic foresight program at the undergraduate level — and the newest. The Foresight Lab is an evolving, rapidly growing program that has continually redefined itself over its five years. Besides the Future Creators Report, the Lab puts on an annual forum to present its findings live.', 'This year the posters for the event were designed by Yale Miller alongside project lead Yasmine Shaban.'], imgs: [1, 2, 3, 4].map((n) => ({ img: `fcr-${n}`, alt: 'Futures Forum poster and event material' })), cols: 4, mcols: 2, ratio: '3/4' },
       { type: 'textImage', h: 'Undisciplined by Design', p: ['The Undisciplined by Design podcast is another arm of the Foresight Lab. Host Aaron Bradley and editor Max Kemats interview some of the biggest names in design and innovation. All branding elements of the podcast were designed by Yale Miller.', 'Listen on Apple Podcasts and Spotify — and new with season 3, full-length video interviews on YouTube.'], img: 'fcr-undisciplined', alt: 'Undisciplined by Design podcast branding' },
       { type: 'textImage', flip: true, h: 'So what exactly is strategic foresight?', p: ['Predicting the future is impossible, but that is not the goal of strategic foresight. Rather, it is the practice of analyzing budding trends and fringe markets in order to imagine not the future, but possible futures.', 'By imagining what the worst and best tomorrow would look like, we can make actionable recommendations to achieve that best future.'], img: 'fcr-three-horizons', alt: 'The three-horizons model diagram', caption: 'The three-horizons model.' },
@@ -270,9 +269,9 @@ module.exports = [
     facts: [['TYPE', 'Strategy'], ['TEAM CREDIT', 'Caroline Berger, Max Kemats'], ['DATE', '2023 – 2026']],
     overview: "The NEXT Innovation Scholars Program (NIS) started with a cohort of just 10 students back in 2021. Now, the program is on track to have 100 students. This growth is a significant mark of the program's success, but it also presents a challenge: how does NIS preserve its culture and continue to deliver excellence in the face of such change? As their project for Stanford's University Innovation Fellows Program, students Caroline Berger, Max Kemats, and Yale Miller developed and implemented a new strategic plan for NIS. The plan's name? The NEXT New Deal.",
     blocks: [
-      { type: 'embed', items: [
-        { url: 'https://e.issuu.com/embed.html?d=2024-2025_next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2024–25 NIS Annual Report', ratio: '1/1', minHeight: 326 },
-        { url: 'https://e.issuu.com/embed.html?d=next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2023–24 NIS Annual Report', ratio: '1/1', minHeight: 350 },
+      { type: 'tabs', kind: 'embed', label: 'THE ANNUAL REPORTS', panels: [
+        { tab: '2024/2025', url: 'https://e.issuu.com/embed.html?d=2024-2025_next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2024–25 NIS Annual Report (Issuu).', ratio: '5/3', minHeight: 326 },
+        { tab: '2023/2024', url: 'https://e.issuu.com/embed.html?d=next_innovation_scholars_annual_report&u=uc_next_innovation_scholars', label: '2023–24 NIS Annual Report (Issuu).', ratio: '5/3', minHeight: 350 },
       ] },
       { type: 'text', h: 'Who are the NEXT Innovation Scholars?', p: ['Want to know all about the NEXT Innovation Scholars? Check out the two annual reports I designed above for a detailed account of all that we do.', "NIS is the University of Cincinnati's premier design thinking and innovation scholarship program. Each year the program accepts a cohort of 10 to 15 new students from any college or major. Multidisciplinary teams are at the core of everything NIS does.", 'Students participate in at least one project each semester. Many are with outside commercial partners such as P&G, KAO Brands, King Records, and more. Others are insights projects or strategic foresight reports that exist solely within the university ecosystem.'] },
       { type: 'textImage', h: 'And who are the University Innovation Fellows?', p: ["Lots of innovation and acronyms, but I assure you these are two different programs! While the NEXT Innovation Scholars is a program within the University of Cincinnati, the University Innovation Fellows is a global fellowship created and run by Stanford's d.school.", 'I was accepted into the 2024 cohort alongside fellow UC students Max Kemats and Caroline Berger. Each UIF team completes a year-long project, then travels to the Netherlands to share their work at a conference.'], img: 'uif-launch', alt: 'University Innovation Fellows launch' },
@@ -310,7 +309,7 @@ module.exports = [
     oldPath: 'bts',
     title: 'Preparing for the Future of Consulting in the Age of AI with BTS',
     tags: ['Strategy'],
-    tint: '#7a5a2a',
+    tint: '#eb0a7a',
     cover: 'Untitled-2-02',
     coverAlt: 'BTS project cover',
     hero: 'bts-hero',

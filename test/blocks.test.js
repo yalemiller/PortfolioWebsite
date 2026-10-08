@@ -129,13 +129,18 @@ test('story shows three paragraphs and folds the rest', () => {
   assert.doesNotMatch(render({ type: 'story', h: 'H', storyTitle: 'T', story: ['1', '2'] }), /story__toggle/);
 });
 
-test('tabs: first panel visible, empty poster sets and missing report URLs get placeholders', () => {
+test('tabs: first panel visible, empty poster sets and embeds without a URL get placeholders', () => {
   const posters = render({ type: 'tabs', kind: 'carousel', label: 'THE POSTER SERIES', panels: [{ tab: '2026', imgs: ['a'] }, { tab: '2025', imgs: [], empty: '2025 POSTERS — COMING SOON' }] });
   assert.match(posters, /aria-selected="true">2026/);
   assert.match(posters, /id="demo-tabs-0-panel-1" aria-labelledby="demo-tabs-0-tab-1" hidden/);
   assert.match(posters, /class="placeholder"[^>]*>2025 POSTERS — COMING SOON/);
 
-  const reports = render({ type: 'tabs', kind: 'report', label: 'THE REPORTS', panels: [{ tab: '2026', title: '2026 Report', url: 'https://example.com/r' }, { tab: '2025', title: '2025 Report', url: '' }] });
-  assert.equal((reports.match(/data-embed=/g) || []).length, 1);
-  assert.match(reports, /COMING SOON/);
+  const reports = render({ type: 'tabs', kind: 'embed', label: 'THE REPORTS', panels: [
+    { tab: '2026', url: 'https://e.issuu.com/embed.html?d=r', label: '2026 report', ratio: '5/3', minHeight: 326 },
+    { tab: '2025', ratio: '5/3', minHeight: 326, empty: '2025 REPORT — COMING SOON' },
+  ] });
+  assert.equal((reports.match(/<iframe [^>]*loading="lazy"/g) || []).length, 1);
+  assert.match(reports, /class="embed" style="aspect-ratio:5\/3;min-height:326px"><iframe src="https:\/\/e.issuu.com\/embed.html\?d=r" title="2026 report"[^>]*sandbox=/);
+  assert.match(reports, /<p class="cs-cap">2026 report<\/p>/);
+  assert.match(reports, /hidden><div class="placeholder" style="aspect-ratio:5\/3;min-height:326px">2025 REPORT — COMING SOON/);
 });

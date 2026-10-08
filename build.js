@@ -18,6 +18,8 @@ const SITE = {
   linkedin: 'https://www.linkedin.com/in/yale-miller/',
   year: new Date().getFullYear(),
   phrases: ['an API Builder for 84.51°', 'the 2026 Futures Forum', 'GenAI tools for Kroger', 'the future of wine with EJ Gallo', 'workshops for design thinkers'],
+  // Hidden for now: set to true to publish /scroll-like-me/ again and put it back in the nav and footer.
+  scrollLikeMe: false,
 };
 
 /* ---------------- image helpers ---------------- */
@@ -99,8 +101,8 @@ function links(base, current, titleCase) {
     ['RESUME', 'Resume', `${base}resume/`, current === 'resume'],
     ['LINKEDIN', 'LinkedIn', SITE.linkedin, false, true],
     ['EPHEMERA', 'Ephemera', `${base}ephemera/`, current === 'ephemera'],
-    ['SCROLL LIKE ME', 'Scroll Like Me', `${base}scroll-like-me/`, current === 'scroll'],
-  ].map(([upper, title, href, cur, ext]) =>
+    SITE.scrollLikeMe && ['SCROLL LIKE ME', 'Scroll Like Me', `${base}scroll-like-me/`, current === 'scroll'],
+  ].filter(Boolean).map(([upper, title, href, cur, ext]) =>
     `<a href="${href}"${cur ? ' aria-current="page"' : ''}${ext ? ' target="_blank" rel="noopener"' : ''}>${titleCase ? title : upper}</a>`
   ).join('');
 }
@@ -109,11 +111,9 @@ function brand(base) {
   return `<a class="brand" href="${base}" aria-label="Yale Miller — home"><img class="brand__logo" src="${base}assets/logo/logo.svg" alt="" width="93" height="49">${SITE.name}</a>`;
 }
 
-/* Header plus the phone menu that drops below it. onHero: white text over a case-study hero;
-   rule: false drops the divider under the header. */
-function header(base, { onHero = false, rule = true, current = '' } = {}) {
-  const cls = ['site-header', onHero && 'site-header--hero', !rule && 'site-header--bare'].filter(Boolean).join(' ');
-  return `<header class="${cls}">
+/* Header plus the phone menu that drops below it. onHero: white text over a case-study hero. */
+function header(base, { onHero = false, current = '' } = {}) {
+  return `<header class="site-header${onHero ? ' site-header--hero' : ''}">
   ${brand(base)}
   <nav class="nav" aria-label="Primary">${links(base, current)}</nav>
   <button type="button" class="menu-btn" data-menu-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
@@ -130,8 +130,7 @@ function footer(base, { current = '' } = {}) {
   <div class="site-footer__links">
     <a href="${base}resume/">RESUME</a>
     <a href="${SITE.linkedin}" target="_blank" rel="noopener">LINKEDIN</a>
-    ${swap}
-    <a href="${base}scroll-like-me/">SCROLL LIKE ME</a>
+    ${swap}${SITE.scrollLikeMe ? `\n    <a href="${base}scroll-like-me/">SCROLL LIKE ME</a>` : ''}
     <span class="site-footer__copy">© ${SITE.year}</span>
   </div>
 </footer>`;
@@ -201,7 +200,7 @@ function buildProject(p, i) {
   const html = `${head(base, { title: `${p.title} — Yale Miller`, description: p.summary || p.question, themeColor: p.tint, accent: p.tint })}
 <div class="cs-hero">
   ${p.hero ? H.pic(p.hero, { alt: '', cls: 'cs-hero__bg', eager: true, sizes: '100vw' }) : ''}<span class="cs-hero__tint"></span><span class="cs-hero__shade"></span>
-  ${header(base, { onHero: true, rule: p.heroRule !== false })}
+  ${header(base, { onHero: true })}
   <div class="cs-hero__body">
     <div>
       <p class="cs-hero__eyebrow">${esc(p.tags.join(' · ').toUpperCase())}</p>
@@ -302,10 +301,12 @@ buildHome();
 projects.forEach(buildProject);
 buildEphemera();
 buildResume();
-require('./scripts/render-scroll-feed.js')({
-  feed: require('./data/scroll-feed.js'), H: makeHelpers('../'),
-  head, header, footer, lightbox, scripts, write,
-});
+if (SITE.scrollLikeMe) {
+  require('./scripts/render-scroll-feed.js')({
+    feed: require('./data/scroll-feed.js'), H: makeHelpers('../'),
+    head, header, footer, lightbox, scripts, write,
+  });
+}
 write('404.html', `${head('/', { title: 'Not found — Yale Miller', description: SITE.description })}
 ${header('/')}
 <main id="main"><section class="hero"><h1 class="hero__h1">Not found.</h1><p class="bio">That page doesn't exist. <a href="/" style="text-decoration:underline">Back to the projects →</a></p></section></main>
