@@ -14,7 +14,7 @@ const SITE = {
   name: 'YALE MILLER',
   title: 'Yale Miller — Designer',
   description: 'Yale Miller is a designer with a focus on UX/UI, Graphic Design, and Design Research.',
-  resume: 'https://drive.google.com/file/d/1oDhroNbx-kLqou2zMB6A4Ui5tlxEzJxb/view?usp=sharing',
+  resumePdf: 'assets/YaleMiller_Resume.pdf', // replace this file to update the resume page
   linkedin: 'https://www.linkedin.com/in/yale-miller/',
   year: new Date().getFullYear(),
   phrases: ['an API Builder for 84.51°', 'the 2026 Futures Forum', 'GenAI tools for Kroger', 'the future of wine with EJ Gallo', 'workshops for design thinkers'],
@@ -96,7 +96,7 @@ function head(base, { title, description, themeColor, accent }) {
 function links(base, current, titleCase) {
   return [
     ['PROJECTS', 'Projects', `${base}#projects`, false],
-    ['RESUME', 'Resume', SITE.resume, false, true],
+    ['RESUME', 'Resume', `${base}resume/`, current === 'resume'],
     ['LINKEDIN', 'LinkedIn', SITE.linkedin, false, true],
     ['EPHEMERA', 'Ephemera', `${base}ephemera/`, current === 'ephemera'],
     ['SCROLL LIKE ME', 'Scroll Like Me', `${base}scroll-like-me/`, current === 'scroll'],
@@ -128,7 +128,7 @@ function footer(base, { current = '' } = {}) {
   return `<footer class="site-footer">
   <span class="site-footer__name">${SITE.name}</span>
   <div class="site-footer__links">
-    <a href="${SITE.resume}" target="_blank" rel="noopener">RESUME</a>
+    <a href="${base}resume/">RESUME</a>
     <a href="${SITE.linkedin}" target="_blank" rel="noopener">LINKEDIN</a>
     ${swap}
     <a href="${base}scroll-like-me/">SCROLL LIKE ME</a>
@@ -244,7 +244,7 @@ function buildEphemera() {
   const html = `${head(base, { title: 'Ephemera — Yale Miller', description: ephemera.intro })}
 ${header(base, { current: 'ephemera' })}
 <main id="main">
-  <section class="eph-intro"><h1 class="eph-intro__h1">Ephemera</h1><p class="bio">${esc(ephemera.intro)}</p></section>
+  <section class="page-intro"><h1 class="page-intro__h1">Ephemera</h1><p class="bio">${esc(ephemera.intro)}</p></section>
   <div class="section-rule"><h2 class="section-rule__label">ARCHIVE</h2></div>
   <div class="eph-grid">
 ${items}
@@ -254,6 +254,35 @@ ${footer(base, { current: 'ephemera' })}
 ${lightbox()}
 ${scripts(base)}`;
   write('ephemera/index.html', html);
+}
+
+/* ---------------- resume ---------------- */
+/* The PDF is drawn on the page by js/resume.js (pdf.js), so it shows inline on phones too. */
+function buildResume() {
+  const base = '../';
+  if (!fs.existsSync(path.join(ROOT, SITE.resumePdf))) throw new Error(`Resume PDF not found: ${SITE.resumePdf}`);
+  const pdf = base + SITE.resumePdf;
+  const file = path.basename(SITE.resumePdf);
+  const html = `${head(base, { title: 'Resume — Yale Miller', description: 'Resume of Yale Miller, a designer focused on UX/UI, graphic design, and design research.' })}
+${header(base, { current: 'resume' })}
+<main id="main">
+  <section class="page-intro">
+    <h1 class="page-intro__h1">Resume</h1>
+    <div class="resume-actions">
+      <a class="button" href="${pdf}" download="${file}">DOWNLOAD PDF <span aria-hidden="true">↓</span></a>
+      <a class="text-link" href="${pdf}" target="_blank" rel="noopener">OPEN IN A NEW TAB <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  <div class="resume" data-resume data-src="${pdf}">
+    <div class="resume__pages"><div class="resume__placeholder">LOADING THE RESUME…</div></div>
+    <noscript><iframe class="resume__frame" src="${pdf}" title="Yale Miller's resume (PDF)"></iframe></noscript>
+    <div class="resume__text visually-hidden" aria-label="Resume text"></div>
+  </div>
+</main>
+${footer(base, { current: 'resume' })}
+<script type="module" src="${base}js/resume.js"></script>
+${scripts(base)}`;
+  write('resume/index.html', html);
 }
 
 function redirect(absTarget, relTarget, title) {
@@ -272,6 +301,7 @@ function write(rel, content) {
 buildHome();
 projects.forEach(buildProject);
 buildEphemera();
+buildResume();
 require('./scripts/render-scroll-feed.js')({
   feed: require('./data/scroll-feed.js'), H: makeHelpers('../'),
   head, header, footer, lightbox, scripts, write,

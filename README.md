@@ -10,14 +10,17 @@ The current design spec is [`docs/handoff-v2/README.md`](docs/handoff-v2/README.
 index.html                  Home (hero + typewriter + project grid)
 projects/<slug>/index.html  Nine case studies (generated)
 ephemera/index.html         Ephemera gallery (generated)
+resume/index.html           Resume page: the PDF shown inline, plus download (generated)
 scroll-like-me/index.html   Curated flowing feed (generated)
 <old-webflow-path>/         Redirect stubs so old links keep working (generated)
 404.html                    Not-found page (generated)
 css/site.css                All styles (design tokens at the top)
 js/site.js                  Typewriter, phone menu, lightbox, embeds, carousels, tabs, story toggle
+js/resume.js                Draws the resume PDF on the page with pdf.js (loaded from cdnjs)
 assets/img/src/             Original images (keep these)
 assets/img/                 Generated 800/1200/1600px WebP + JPEG sets + manifest.json
 assets/logo/logo.svg        Logo
+assets/YaleMiller_Resume.pdf  The resume shown on /resume/
 data/projects.js            All case-study content, in "NN / 09" order
 data/ephemera.js            Ephemera image list
 data/scroll-feed.js         Scroll Like Me selections, newest first
@@ -47,6 +50,10 @@ Still to supply (each has a placeholder): the 2025 Futures Forum posters and the
 Embeds (`embed` blocks) are ordinary iframes with `loading="lazy"`, sized like each host's own embed code: `ratio`, or a fixed desktop `height`, plus optional `minHeight`, `maxWidth` and `border`. Extra attributes a host needs (Issuu's `sandbox`/`allow`) are set by hostname in `lib/blocks.js`. A Google Drive file embeds with its `/preview` URL.
 
 Committed output (`index.html`, `projects/`, `ephemera/`, the redirect folders and `assets/img/*.{webp,jpg}`) is what gets deployed, so commit after building.
+
+## Updating the resume
+
+Replace `assets/YaleMiller_Resume.pdf` with the new PDF (keep the file name), then commit and push. No rebuild is needed: the resume page reads the PDF when it loads, and the download button serves the same file. To use a different file name, change `resumePdf` in `build.js` and rebuild.
 
 ## Updating Scroll Like Me
 
@@ -97,4 +104,4 @@ Everything in the repository root is servable as-is. The site is served by GitHu
 - The Futures Forum video and report frames load their iframes on click; the Figma, Issuu and Drive embeds load lazily as they scroll into view.
 - Sizes interpolate between the 390px and 1200px designs; multi-column layouts collapse at 820px. Content stops widening at 1440px.
 - Carousels advance every 4.5s and the home typewriter animates, except under `prefers-reduced-motion`.
-- The resume link is the Google Drive file from the design handoff (`YaleMiller_Resume.pdf`).
+- RESUME in the nav and footer opens `/resume/`, which shows the PDF on the page (pdf.js, so it also works on phones) with a download button. Without JavaScript it falls back to the browser's PDF viewer.
