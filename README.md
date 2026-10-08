@@ -99,7 +99,7 @@ posts using the link format. Feed text is plain text, not HTML.
 
 ## Deploying
 
-Everything in the repository root is servable as-is. For GitHub Pages: Settings → Pages → deploy from the `main` branch, root folder. Point the `yalemiller.com` DNS at GitHub Pages and add a `CNAME` file containing `yalemiller.com` when the domain moves over.
+Everything in the repository root is servable as-is. The site is served by GitHub Pages from the `main` branch, root folder, at `www.yalemiller.com` (set by the `CNAME` file; `.nojekyll` makes Pages serve the files as committed). DNS is at Namecheap: four A records on `@` for `185.199.108.153`–`185.199.111.153` and a CNAME `www` → `yalemiller.github.io`. Pushing to `main` redeploys within a minute or two.
 
 ## Notes
 
