@@ -1,3 +1,5 @@
 node_modules/
 .DS_Store
 Thumbs.db
+# Protected NDA case-study content (see build.js)
+private/
