@@ -160,7 +160,7 @@ const projectHref = (base, p) => `${base}projects/${p.slug}/`;
 function card(base, H, p) {
   return `
     <a class="card" href="${projectHref(base, p)}" style="--card-color:${p.tint}">
-      <span class="card__media">${H.pic(p.cover, { alt: p.coverAlt || '', cls: 'card__img', sizes: '(max-width: 820px) 45vw, 48vw' })}<span class="card__bar"></span></span>
+      <span class="card__media">${H.pic(p.cover, { alt: p.coverAlt || '', cls: 'card__img', sizes: '(max-width: 820px) 45vw, 31vw' })}<span class="card__bar"></span></span>
       <span class="card__title"><span class="card__title-text">${esc(p.title)}</span><span class="card__arrow" aria-hidden="true">→</span></span>
       <span class="card__tags">${esc(p.tags.join(' · '))}</span>
     </a>`;
@@ -183,13 +183,13 @@ ${header(base, { current: 'home' })}
   </section>
   <section aria-labelledby="selected-projects-heading">
     <div class="section-rule" id="projects"><h2 class="section-rule__label" id="selected-projects-heading">SELECTED PROJECTS</h2></div>
-    <div class="grid grid--home">${selected.map((p) => card(base, H, p)).join('')}
+    <div class="grid">${selected.map((p) => card(base, H, p)).join('')}
     </div>
   </section>
   <section aria-labelledby="strategy-heading">
     <div class="section-rule" id="strategy"><h2 class="section-rule__label" id="strategy-heading">STRATEGY &amp; RESEARCH</h2></div>
     <p class="section-intro">Research, foresight, and facilitation that help teams decide what comes next.</p>
-    <div class="grid grid--home">${strategy.map((p) => card(base, H, p)).join('')}
+    <div class="grid">${strategy.map((p) => card(base, H, p)).join('')}
     </div>
   </section>
 </main>
