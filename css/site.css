@@ -23,7 +23,7 @@
   --maxw: 1440px;
   /* Side padding: the gutter, widened on very large screens so content stays within --maxw.
      The % resolves against whichever element uses it, so use it on full-width boxes only. */
-  --pad: max(var(--gutter), calc((100% - var(--maxw)) / 2 + var(--gutter)));
+  --pad: max(var(--gutter), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px), calc((100% - var(--maxw)) / 2 + var(--gutter)));
   --sec: clamp(40px, calc(40px + 24 * var(--fl)), 64px);
   --brk: clamp(48px, calc(48px + 24 * var(--fl)), 72px);
   --brk-pad: clamp(36px, calc(36px + 20 * var(--fl)), 56px);
@@ -79,6 +79,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   position: relative; z-index: 2;
   display: flex; justify-content: space-between; align-items: center;
   padding: clamp(18px, calc(18px + 8 * var(--fl)), 26px) var(--pad);
+  /* Extend hero artwork to the screen edge while keeping navigation below the notch/island. */
+  padding-top: calc(clamp(18px, calc(18px + 8 * var(--fl)), 26px) + env(safe-area-inset-top, 0px));
   border-bottom: 1px solid var(--hair);
 }
 .site-header--hero { color: #fff; border-bottom-color: transparent; }
@@ -158,6 +160,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--ink); color: #fff; padding: clamp(32px, calc(32px + 8 * var(--fl)), 40px) var(--pad);
+  padding-bottom: calc(clamp(32px, calc(32px + 8 * var(--fl)), 40px) + env(safe-area-inset-bottom, 0px));
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px;
   font-size: clamp(13px, calc(13px + 1 * var(--fl)), 14px);
 }
