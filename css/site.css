@@ -131,6 +131,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px;
   padding: clamp(20px, calc(20px + 12 * var(--fl)), 32px) var(--pad) clamp(36px, calc(36px + 28 * var(--fl)), 64px);
 }
+.grid--home { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.section-intro { padding: 20px var(--pad) 0; max-width: var(--maxw); color: var(--muted); }
 .card { display: grid; gap: 14px; align-content: start; }
 .card__media { position: relative; display: block; aspect-ratio: 2054 / 1210; overflow: hidden; background: var(--card-color, #333); }
 .card__img {

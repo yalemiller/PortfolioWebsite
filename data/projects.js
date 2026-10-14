@@ -225,6 +225,7 @@ module.exports = [
   /* 05 ---------------------------------------------------------------- */
   {
     slug: 'ej-gallo',
+    homeGroup: 'strategy',
     oldPath: 'ej-gallo',
     title: 'The Future of Wine with EJ Gallo',
     tags: ['Consumer Insights'],
@@ -255,6 +256,7 @@ module.exports = [
   /* 06 ---------------------------------------------------------------- */
   {
     slug: 'next-new-deal',
+    homeGroup: 'strategy',
     oldPath: 'the-next-new-deal',
     title: 'Building a Strategic Plan for the NEXT Innovation Scholars',
     tags: ['Strategy'],
@@ -305,6 +307,7 @@ module.exports = [
   /* 08 ---------------------------------------------------------------- */
   {
     slug: 'bts',
+    homeGroup: 'strategy',
     oldPath: 'bts',
     title: 'Preparing for the Future of Consulting in the Age of AI with BTS',
     tags: ['Strategy'],
@@ -325,6 +328,7 @@ module.exports = [
   /* 09 ---------------------------------------------------------------- */
   {
     slug: 'workshops',
+    homeGroup: 'strategy',
     oldPath: 'workshops',
     title: 'Building and Facilitating Design Thinking Workshops',
     tags: ['Design Thinking', 'Workshop Facilitation'],
