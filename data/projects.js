@@ -46,10 +46,9 @@ module.exports = [
         ],
       },
       {
-        // 2025 report to come: add its Issuu embed `url` (and a `label`) to the 2025 panel.
         type: 'tabs', kind: 'embed', label: 'THE REPORTS', panels: [
-          { tab: '2026', url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2026 Future Creators Report (Issuu).', ratio: '5/3', minHeight: 326 },
-          { tab: '2025', ratio: '5/3', empty: '2025 REPORT — COMING SOON' },
+          { tab: '2025', url: 'https://e.issuu.com/embed.html?d=horizon_shift_volume_003_future_creators_report&u=uc_next_innovation_scholars', label: 'Horizon Shift, Vol. 3 — 2025 Future Creators Report (Issuu).', ratio: '5/3', minHeight: 326 },
+          { tab: '2026', ratio: '5/3', empty: '2026 REPORT — COMING SOON' },
         ],
       },
       {
