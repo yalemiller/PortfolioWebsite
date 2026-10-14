@@ -8,6 +8,9 @@ const { esc, rich } = require('./lib/html');
 const renderBlocks = require('./lib/blocks');
 
 const ROOT = __dirname;
+// A new URL whenever styles change prevents browsers from reusing the previous deployment.
+const cssVersion = require('crypto').createHash('sha256')
+  .update(fs.readFileSync(path.join(ROOT, 'css', 'site.css'))).digest('hex').slice(0, 12);
 const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'img', 'manifest.json'), 'utf8'));
 
 const SITE = {
@@ -88,7 +91,7 @@ function head(base, { title, description, themeColor, accent }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${base}css/site.css">
+<link rel="stylesheet" href="${base}css/site.css?v=${cssVersion}">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body${accent ? ` style="--accent:${accent}"` : ''}>
